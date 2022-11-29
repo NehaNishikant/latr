@@ -2,7 +2,7 @@
 data/
 ocr-dataset/
 log/
-content/
+sample/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

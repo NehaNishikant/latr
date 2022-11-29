@@ -14,4 +14,4 @@ conda activate latr
 export TQDM_DISABLE=1
 # code
 
-upyter nbconvert --to python --execute /projects/tir3/users/nnishika/MML/latr/examples/LaTr_PreTraining.ipynb
+python /projects/tir3/users/nnishika/MML/latr/examples/LaTr_PreTraining.py
