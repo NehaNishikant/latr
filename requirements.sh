@@ -20,3 +20,6 @@ pip install pytesseract
 # sudo apt install tesseract-ocr
 pip install 'Pillow==7.1.2'
 conda install tesseract #for linux
+# something something brew for max
+pip install huggingface_hub
+pip install pyyaml

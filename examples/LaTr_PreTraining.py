@@ -80,7 +80,7 @@ class OCRDataset(Dataset):
         coordinates.append(curr_bbox)
 
     ## Similar to the docformer's create_features function, but with some changes
-    img, boxes, tokenized_words = create_features(image_path = tif_path,
+    img, boxes, tokenized_words = create_features(img_path = tif_path,
                                                   tokenizer = self.tokenizer,
                                                   target_size = (1000, 1000),
                                                   use_ocr = False,
