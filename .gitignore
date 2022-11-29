@@ -2,7 +2,6 @@
 data/
 ocr-dataset/
 log/
-src/latr/log/
 content/
 
 # Byte-compiled / optimized / DLL files
