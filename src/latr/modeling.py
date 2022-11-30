@@ -85,6 +85,7 @@ class LaTr_for_finetuning(nn.Module):
     ## In the fine-tuning stage of vit, except the last layer, all the layers were freezed
 
     self.classification_head = nn.Linear(config['hidden_state'], config['classes'])
+    self.fc = nn.Linear(config['classes'], 2)
 
   def forward(self, lang_vect, spatial_vect, quest_vect, img_vect):
 
@@ -121,5 +122,6 @@ class LaTr_for_finetuning(nn.Module):
     final_feat = self.pre_training_model.residue_decoder(final_feat)
 
     answer_vector = self.classification_head(final_feat)[:, :self.config['seq_len'], :]
+    final_answer = self.fc(answer_vector)
 
-    return answer_vector
+    return final_answer
