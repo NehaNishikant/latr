@@ -564,8 +564,8 @@ from pytorch_lightning.loggers import WandbLogger
 
 def main():
     datamodule = DataModule(train_ds, val_ds)
-    max_steps = 50000       ## 60K Steps
-    latr = LaTrForVQA(config, max_steps= max_steps, pretrained_model=fpath_for_pretrained)
+    max_steps = 5000       ## 5K Steps (~2 epochs)
+    latr = LaTrForVQA(config, max_steps= max_steps, learning_rate=1e-5, pretrained_model=fpath_for_pretrained)
     
     # try:
     #     latr = latr.load_from_checkpoint(url_for_ckpt)
