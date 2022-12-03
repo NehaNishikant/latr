@@ -1,9 +1,10 @@
 #data
 data/
-ocr-dataset/
+sarcasm-dataset/
 log/
 sample/
-models/
+*.ckpt
+*.pt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

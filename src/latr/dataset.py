@@ -5,7 +5,7 @@ import pytesseract
 from PIL import Image, ImageDraw
 
 PAD_TOKEN_BOX = [0, 0, 0, 0]
-max_seq_len = 512
+max_seq_len = 10
 
 ## Function: 1
 ## Purpose: Resize and align the bounding box for the different sized image
@@ -43,7 +43,7 @@ def get_specific_file(path, last_entry = 'tif'):
 ## Function: 4
 
 
-def get_tokens_with_boxes(unnormalized_word_boxes, list_of_words, tokenizer, pad_token_id = 0, pad_token_box = [0, 0, 0, 0], max_seq_len = 512):
+def get_tokens_with_boxes(unnormalized_word_boxes, list_of_words, tokenizer, pad_token_id = 0, pad_token_box = [0, 0, 0, 0], max_seq_len = 10):
     
     '''
     This function returns two items:
@@ -116,7 +116,7 @@ def create_features(
     img_path,
     tokenizer,
     target_size = (1000, 1000),
-    max_seq_length=512,
+    max_seq_length=10,
     use_ocr = False,
     bounding_box = None,
     words = None,

@@ -47,7 +47,7 @@ def apply_mask_on_token_bbox(boxes, tokenized_words, only_actual_words = False, 
   return res,boxes, tokenized_words
 
 
-def convert_ans_to_token(answer, label2id, max_seq_length = 512 ):
+def convert_ans_to_token(answer, label2id, max_seq_length = 10 ):
 
   ## Simple Trick to pad a sequence to deired length
   dummy_array = torch.zeros(max_seq_length)
@@ -63,7 +63,7 @@ def convert_ans_to_token(answer, label2id, max_seq_length = 512 ):
   return actual_ans_array
 
 
-def convert_ques_to_token(question, tokenizer, pad_token_id = 0, max_seq_len = 512):
+def convert_ques_to_token(question, tokenizer, pad_token_id = 0, max_seq_len = 10):
 
   question_array = []
   question = question.split(" ")

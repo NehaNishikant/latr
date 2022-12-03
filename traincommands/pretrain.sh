@@ -14,4 +14,4 @@ conda activate latr
 export TQDM_DISABLE=1
 # code
 
-python /projects/tir3/users/nnishika/MML/latr/examples/LaTr_PreTraining.py
+python trainscripts/LaTr_PreTraining.py

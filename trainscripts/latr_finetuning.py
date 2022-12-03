@@ -34,6 +34,9 @@ For more understanding of the model and its code implementation, one can visit [
 
 ## Default Library import
 
+import sys
+sys.path.append('src/latr')
+
 import os
 import json
 import numpy as np
@@ -66,19 +69,19 @@ import pytorch_lightning as pl
 ## Setting the hyperparameters as well as primary configurations
 
 PAD_TOKEN_BOX = [0, 0, 0, 0]
-max_seq_len = 512
-batch_size = 2
+max_seq_len = 10 #512
+batch_size = 1
 target_size = (500,384) ## Note that, ViT would make it 224x224 so :(
 t5_model = "t5-base"
 
 ## Appending the ocr and json path
 import os
-base_path = '/content/dataset/'
+base_path = 'sarcasm-dataset/'
 train_ocr_json_path = os.path.join(base_path, 'sarcasm_ocr_train.json')
-train_json_path = os.path.join(base_path, '../train.json')
+train_json_path = os.path.join(base_path, 'train.json')
 
 val_ocr_json_path = os.path.join(base_path, 'sarcasm_ocr_valid.json')
-val_json_path = os.path.join(base_path, '../valid.json')
+val_json_path = os.path.join(base_path, 'valid.json')
 
 ## Loading the files
 
@@ -103,7 +106,9 @@ val_json_df['answers']   = val_json_df['answers'].apply(lambda x: " ".join(list(
 
 ## Dropping of the images which doesn't exist, might take some time
 
-base_img_path = os.path.join('./', 'train_images')
+# base_img_path = os.path.join('./', 'train_images')
+# print("base image path: ", base_img_path)
+base_img_path = "/projects/tir3/users/nnishika/MML/data-of-multimodal-sarcasm-detection/dataset_image"
 train_json_df['path_exists'] = train_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg'))
 train_json_df = train_json_df[train_json_df['path_exists']==True]
 
@@ -150,7 +155,7 @@ import torch
 from torchvision import transforms
 
 class TextVQA(Dataset):
-  def __init__(self, base_img_path, json_df, ocr_json_df, tokenizer, transform = None, max_seq_length = 512, target_size = (500,384), fine_tune = True):
+  def __init__(self, base_img_path, json_df, ocr_json_df, tokenizer, transform = None, max_seq_length = 10, target_size = (500,384), fine_tune = True):
 
     self.base_img_path = base_img_path
     self.json_df = json_df
@@ -398,7 +403,7 @@ config = {
     'hidden_state': 768,
     'max_2d_position_embeddings': 1001,
     'classes': 32128,
-    'seq_len': 512
+    'seq_len': 10
 }
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -411,8 +416,11 @@ def calculate_acc_score(pred, gt):
     
     ## Function ignores the calculation of padding part
     ## Shape (seq_len, seq_len)
-    mask = torch.clamp(gt, min = 0, max = 1)
-    last_non_zero_argument = (mask != 0).nonzero()[1][-1]
+    print("gt: ", tokenizer.decode(gt[0], skip_special_tokens=True))
+    # print("gt: ", gt[0])
+    # mask = torch.clamp(gt, min = 0, max = 1)
+    # print("mask: ", (mask != 0).nonzero().shape)
+    last_non_zero_argument = 1#(mask != 0).nonzero()[1][-1] #[1][-1]
     pred = pred[:last_non_zero_argument]
     gt = gt[:last_non_zero_argument]  ## Include all the arguments till the first padding index
     
@@ -453,12 +461,12 @@ class LaTrForVQA(pl.LightningModule):
     img =     batch_dict['img']
     question = batch_dict['question']
     words =   batch_dict['tokenized_words']
-    answer_vector = self.latr(lang_vect = words, 
+    final_answer = self.latr(lang_vect = words, 
                                spatial_vect = boxes, 
                                img_vect = img, 
                                quest_vect = question
                                )
-    return answer_vector
+    return final_answer
 
   def calculate_metrics(self, prediction, labels):
 
@@ -491,8 +499,12 @@ class LaTrForVQA(pl.LightningModule):
 
   def validation_step(self, batch, batch_idx):
     logits = self.forward(batch)
-    loss = nn.CrossEntropyLoss()(logits.reshape(-1,self.config['classes']), batch['answer'].reshape(-1))
+    print("batch: ", len(batch["answer"]))
+    loss = nn.CrossEntropyLoss()(logits.reshape(-1, self.config['classes']), batch['answer'].reshape(-1))
     _, preds = torch.max(logits, dim = -1)
+
+    print("preds: ", preds.shape)
+    print(tokenizer.decode(preds[0], skip_special_tokens=True))
 
     ## Validation Accuracy
     val_acc = self.calculate_metrics(preds.cpu(), batch['answer'].cpu())
@@ -544,9 +556,8 @@ class LaTrForVQA(pl.LightningModule):
 #     self.logger.experiment.add_scalar('validation_loss', val_loss_mean, global_step=self.current_epoch)
 #     self.validation_losses = []  # reset for next epoch
 
-#url_for_ckpt = 'https://www.kaggleusercontent.com/kf/99663112/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..GfuZWkqwWi9nROCTnAS3OQ.YowTb3CNlES2WS_F6BvOSrGs3uLWc2kSBkhElYUcndML0Feuiizdu8trA2e4aj_kdluv1nYlVpS3_86VaJfgSBtyJShQoB0CyxCqdvdMiKl4eQQdWUv2XrTBecEJPXupdFaElzr57CcRjpz35rueyDjf3GVJLznkpSdoyWwSxoxCACbUpS73PKWi97WHfPmEWQgXTDxT_Uno_Pau6fayKyzJ-vWrETzOA2Z6f1-i7umK48D7JBQacS2g_40dW8wIH34QsztCZhHOake7qZnXU_19qaFeDQCNldZ4HcGAmKMtqYI_NK_By370IZ6OHe5Q-mh1f_9SaZoXCzzgaNx4Wsw1THZgzSjZgP2dTLP6a4ZkjHFWiZdkl0azvmoCmSVVYbRdQ9_iI9sFvhUpDWj1bOlr-Zrq9gRi8ksaH9rIzrzk63x_fKPGphZKpxB_l_6iewdGt4yb3GB8kWyGrxBnsGvV5Ei7gTaqv9OAkSKTACMEKB-rj-T8HKtk3ktnEqGMCpHTpkB8RYE6EqYRPbnSYMShjZb12GSn5uYntLtcG7MUbQX-OMt0vzh9fag_zpCyO89K56jxZ6Q9kWdADG0C2T0nR8uC8vWUUBptWNc2tt6pcupcUO19kt7ddNHMbxajHym5AijizrfJbkqnujEodlHWc8C77PawpX2xUPvIlbSvhbdsRRyYfOFGLmZsDdKa.c9dgiKXE5w_-qo4J3He6Qw/models/epoch=0-step=34602.ckpt'
 
-fpath_for_pretrained = '/content/drive/MyDrive/Senior/Fall/Multimodal Project/pretrained.pt'
+fpath_for_pretrained = 'models/pretrained.pt'
 
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
@@ -575,13 +586,16 @@ def main():
     
     trainer = pl.Trainer(
         max_steps = max_steps,
-        default_root_dir="logs",
-        gpus=(1 if torch.cuda.is_available() else 0),
+        devices=8,
+        accelerator="gpu",
+        # default_root_dir="logs",
+#        gpus=(1 if torch.cuda.is_available() else 0),
 #         accelerator="tpu",
 #         devices=8,
         #logger=wandb_logger,
         callbacks=[checkpoint_callback],
-        deterministic=True
+        deterministic=True,
+        default_root_dir="models/"
     )
     
     trainer.fit(latr, datamodule)

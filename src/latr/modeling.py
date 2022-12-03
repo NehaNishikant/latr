@@ -85,7 +85,7 @@ class LaTr_for_finetuning(nn.Module):
     ## In the fine-tuning stage of vit, except the last layer, all the layers were freezed
 
     self.classification_head = nn.Linear(config['hidden_state'], config['classes'])
-    self.fc = nn.Linear(config['classes'], 2)
+    # self.fc = nn.Linear(config['classes'], 2)
 
   def forward(self, lang_vect, spatial_vect, quest_vect, img_vect):
 
@@ -104,7 +104,7 @@ class LaTr_for_finetuning(nn.Module):
 
     ## Extracting the image feature, using the Vision Transformer
     img_feat = self.vit(img_vect).last_hidden_state
-    
+
     ## Extracting the question vector
     quest_feat = self.pre_training_model.language_emb(quest_vect)
 
@@ -122,6 +122,11 @@ class LaTr_for_finetuning(nn.Module):
     final_feat = self.pre_training_model.residue_decoder(final_feat)
 
     answer_vector = self.classification_head(final_feat)[:, :self.config['seq_len'], :]
-    final_answer = self.fc(answer_vector)
 
-    return final_answer
+    print("answer vector: ", answer_vector.shape)
+
+    return answer_vector
+
+    # final_answer = self.fc(answer_vector)
+    
+    #return final_answer
