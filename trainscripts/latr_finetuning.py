@@ -69,71 +69,15 @@ import pytorch_lightning as pl
 ## Setting the hyperparameters as well as primary configurations
 
 PAD_TOKEN_BOX = [0, 0, 0, 0]
-max_seq_len = 10 #512
+# max_seq_len = 2 #512
+from utils import max_seq_len
 batch_size = 1
 target_size = (500,384) ## Note that, ViT would make it 224x224 so :(
 t5_model = "t5-base"
 
 ## Appending the ocr and json path
 import os
-base_path = 'sarcasm-dataset/'
-train_ocr_json_path = os.path.join(base_path, 'sarcasm_ocr_train.json')
-train_json_path = os.path.join(base_path, 'train.json')
 
-val_ocr_json_path = os.path.join(base_path, 'sarcasm_ocr_valid.json')
-val_json_path = os.path.join(base_path, 'valid.json')
-
-## Loading the files
-
-train_ocr_json = json.load(open(train_ocr_json_path))['data']
-train_json = json.load(open(train_json_path))['data']
-
-val_ocr_json = json.load(open(val_ocr_json_path))['data']
-val_json = json.load(open(val_json_path))['data']
-
-## Useful for the key-value extraction
-
-train_json_df = pd.DataFrame(train_json)
-train_ocr_json_df = pd.DataFrame(train_ocr_json)
-
-val_json_df = pd.DataFrame(val_json)
-val_ocr_json_df = pd.DataFrame(val_ocr_json)
-
-## Converting list to string
-
-train_json_df['answers'] = train_json_df['answers'].apply(lambda x: " ".join(list(map(str, x))))
-val_json_df['answers']   = val_json_df['answers'].apply(lambda x: " ".join(list(map(str, x))))
-
-## Dropping of the images which doesn't exist, might take some time
-
-# base_img_path = os.path.join('./', 'train_images')
-# print("base image path: ", base_img_path)
-base_img_path = "/projects/tir3/users/nnishika/MML/data-of-multimodal-sarcasm-detection/dataset_image"
-train_json_df['path_exists'] = train_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg'))
-train_json_df = train_json_df[train_json_df['path_exists']==True]
-
-val_json_df['path_exists'] = val_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg'))
-val_json_df = val_json_df[val_json_df['path_exists']==True]
-
-## Dropping the unused columns
-
-# train_json_df.drop(columns = ['flickr_original_url', 'flickr_300k_url','image_classes', 'question_tokens', 'path_exists'
-#                               ], axis = 1, inplace = True)
-# val_json_df.drop(columns = ['flickr_original_url', 'flickr_300k_url','image_classes', 'question_tokens', 'path_exists'
-#                               ], axis = 1, inplace = True)
-
-## Deleting the json
-
-del train_json
-del train_ocr_json
-del val_json
-del val_ocr_json
-
-## Grouping for the purpose of feature extraction
-grouped_df = train_json_df.groupby('image_id')
-
-## Getting all the unique keys of the group by object
-keys = list(grouped_df.groups.keys())
 
 ## Tokenizer import
 
@@ -155,7 +99,7 @@ import torch
 from torchvision import transforms
 
 class TextVQA(Dataset):
-  def __init__(self, base_img_path, json_df, ocr_json_df, tokenizer, transform = None, max_seq_length = 10, target_size = (500,384), fine_tune = True):
+  def __init__(self, base_img_path, json_df, ocr_json_df, tokenizer, transform = None, max_seq_length = max_seq_len, target_size = (500,384), fine_tune = True):
 
     self.base_img_path = base_img_path
     self.json_df = json_df
@@ -259,74 +203,130 @@ class TextVQA(Dataset):
     answer = current_group['answers']
     answer = convert_ques_to_token(question = answer, tokenizer = self.tokenizer).long()
 
-    return {'img':img, 'boxes': boxes, 'tokenized_words': tokenized_words, 'question': question, 'answer': answer, 'id': torch.as_tensor(idx)}
+    return {'img':img, 'boxes': boxes, 'tokenized_words': tokenized_words, 'question': question, 'answer': answer, 'id': torch.as_tensor(idx), 'img_id':curr_img}
 
-train_ds = TextVQA(base_img_path = base_img_path,
-                   json_df = train_json_df,
-                   ocr_json_df = train_ocr_json_df,
-                   tokenizer = tokenizer,
-                   transform = None, 
-                   max_seq_length = max_seq_len, 
-                   target_size = target_size
-                   )
+def get_data():
+    base_path = 'sarcasm-dataset/'
+    train_ocr_json_path = os.path.join(base_path, 'sarcasm_ocr_train.json')
+    train_json_path = os.path.join(base_path, 'train.json')
+
+    val_ocr_json_path = os.path.join(base_path, 'sarcasm_ocr_valid.json')
+    val_json_path = os.path.join(base_path, 'valid.json')
+
+    test_ocr_json_path = os.path.join(base_path, 'sarcasm_ocr_test.json')
+    test_json_path = os.path.join(base_path, 'test.json')
+
+    ## Loading the files
+
+    train_ocr_json = json.load(open(train_ocr_json_path))['data']
+    train_json = json.load(open(train_json_path))['data']
+
+    val_ocr_json = json.load(open(val_ocr_json_path))['data']
+    val_json = json.load(open(val_json_path))['data']
+
+    test_ocr_json = json.load(open(test_ocr_json_path))['data']
+    test_json = json.load(open(test_json_path))['data']
+
+    ## Useful for the key-value extraction
+
+    train_json_df = pd.DataFrame(train_json)
+    train_ocr_json_df = pd.DataFrame(train_ocr_json)
+
+    val_json_df = pd.DataFrame(val_json)
+    val_ocr_json_df = pd.DataFrame(val_ocr_json)
+
+    test_json_df = pd.DataFrame(test_json)
+    test_ocr_json_df = pd.DataFrame(test_ocr_json)
+
+    ## Converting list to string
+
+    train_json_df['answers'] = train_json_df['answers'].apply(lambda x: " ".join(list(map(str, x))))
+    val_json_df['answers']   = val_json_df['answers'].apply(lambda x: " ".join(list(map(str, x))))
+    test_json_df['answers']   = test_json_df['answers'].apply(lambda x: " ".join(list(map(str, x))))
+
+    ## Dropping of the images which doesn't exist, might take some time
+
+    # base_img_path = os.path.join('./', 'train_images')
+    # print("base image path: ", base_img_path)
+    base_img_path = "/projects/tir3/users/nnishika/MML/data-of-multimodal-sarcasm-detection/dataset_image"
+    train_json_df['path_exists'] = train_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg'))
+    train_json_df = train_json_df[train_json_df['path_exists']==True]
+
+    val_json_df['path_exists'] = val_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg'))
+    val_json_df = val_json_df[val_json_df['path_exists']==True]
+
+    test_json_df['path_exists'] = test_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg'))
+    test_json_df = test_json_df[test_json_df['path_exists']==True]
+
+    ## Dropping the unused columns
+
+    # train_json_df.drop(columns = ['flickr_original_url', 'flickr_300k_url','image_classes', 'question_tokens', 'path_exists'
+    #                               ], axis = 1, inplace = True)
+    # val_json_df.drop(columns = ['flickr_original_url', 'flickr_300k_url','image_classes', 'question_tokens', 'path_exists'
+    #                               ], axis = 1, inplace = True)
+
+    ## Deleting the json
+
+    del train_json
+    del train_ocr_json
+    del val_json
+    del val_ocr_json
+
+    ## Grouping for the purpose of feature extraction
+    grouped_df = train_json_df.groupby('image_id')
+
+    ## Getting all the unique keys of the group by object
+    keys = list(grouped_df.groups.keys())
+    
+    train_ds = TextVQA(base_img_path = base_img_path,
+                       json_df = train_json_df,
+                       ocr_json_df = train_ocr_json_df,
+                       tokenizer = tokenizer,
+                       transform = None, 
+                       max_seq_length = max_seq_len, 
+                       target_size = target_size
+                       )
 
 
-val_ds = TextVQA(base_img_path = base_img_path,
-                   json_df = val_json_df,
-                   ocr_json_df = val_ocr_json_df,
-                   tokenizer = tokenizer,
-                   transform = None, 
-                   max_seq_length = max_seq_len, 
-                   target_size = target_size
-                   )
+    val_ds = TextVQA(base_img_path = base_img_path,
+                       json_df = val_json_df,
+                       ocr_json_df = val_ocr_json_df,
+                       tokenizer = tokenizer,
+                       transform = None, 
+                       max_seq_length = max_seq_len, 
+                       target_size = target_size
+                       )
 
-idx = 0
+    test_ds = TextVQA(base_img_path = base_img_path,
+                       json_df = test_json_df,
+                       ocr_json_df = test_ocr_json_df,
+                       tokenizer = tokenizer,
+                       transform = None, 
+                       max_seq_length = max_seq_len, 
+                       target_size = target_size
+                       )
 
-train_ds.json_df
+    """
+    idx = 0
 
-encoding = train_ds[idx]  ## Might take time as per the processing
-for key in list(encoding.keys()):
-  print_statement = '{0: <30}'.format(str(key) + " has a shape:")
-  print(print_statement, encoding[key].shape)
 
-## Sample Img, Sample box, sample words, sample answer, sample question
+    encoding = train_ds[idx]  ## Might take time as per the processing
+    for key in list(encoding.keys()):
+      print_statement = '{0: <30}'.format(str(key) + " has a shape:")
+      print(print_statement, encoding[key].shape)
 
-s_img = encoding['img']
-s_boxes = encoding['boxes']
-s_words = encoding['tokenized_words']
-s_ans = encoding['answer']
-s_ques = encoding['question']
+    ## Sample Img, Sample box, sample words, sample answer, sample question
 
-"""## Decoding the Question, Answer as well as the Image for the post-processing
+    s_img = encoding['img']
+    s_boxes = encoding['boxes']
+    s_words = encoding['tokenized_words']
+    s_ans = encoding['answer']
+    s_ques = encoding['question']
+    """
 
-### 1. Image Part
-"""
+    return(train_ds, val_ds, test_ds)
 
-## OCR and Image part
-# actual_img = transforms.ToPILImage()(s_img).convert("RGB")
-# actual_boxes = s_boxes[:, :4].numpy().tolist()  ## (xmin, ymin, xmax, ymax)
 
-## If use fine_tune = False, we can get the ocr as well
-
-# from PIL import Image, ImageDraw
-
-# # create rectangle image
-# draw_on_img = ImageDraw.Draw(actual_img)  
-
-# for box in actual_boxes:
-#     draw_on_img.rectangle(box, outline ="red")
-
-# actual_img
-
-"""### 2. Question Part"""
-
-# decoded_ques = convert_token_to_ques(s_ques, tokenizer)
-# print(decoded_ques)  ## Goes well!!
-
-"""### 3. Answer Part"""
-
-# decoded_answer = convert_token_to_ques(s_ans, tokenizer)
-# print(decoded_answer)  ## Goes Well!!
 
 """## 4.2. Making the Collate function for DataLoader:
 
@@ -346,6 +346,8 @@ def collate_fn(data_bunch):
 
   dict_data_bunch = {}
 
+  non_tensor_keys = ["img_id"]
+
   for i in data_bunch:
     for (key, value) in i.items():
       if key not in dict_data_bunch:
@@ -353,7 +355,8 @@ def collate_fn(data_bunch):
       dict_data_bunch[key].append(value)
 
   for key in list(dict_data_bunch.keys()):
-      dict_data_bunch[key] = torch.stack(dict_data_bunch[key], axis = 0)
+      if key not in non_tensor_keys:
+        dict_data_bunch[key] = torch.stack(dict_data_bunch[key], axis = 0)
 
   if 'img' in dict_data_bunch:
     ## Pre-processing for ViT
@@ -373,11 +376,12 @@ def collate_fn(data_bunch):
 
 class DataModule(pl.LightningDataModule):
 
-  def __init__(self, train_dataset, val_dataset,  batch_size = 1):
+  def __init__(self, train_dataset, val_dataset,  test_dataset, batch_size = 1):
 
     super(DataModule, self).__init__()
     self.train_dataset = train_dataset
     self.val_dataset = val_dataset
+    self.test_dataset = test_dataset
     self.batch_size = batch_size
 
     
@@ -388,6 +392,10 @@ class DataModule(pl.LightningDataModule):
   
   def val_dataloader(self):
     return DataLoader(self.val_dataset, batch_size = self.batch_size,
+                    collate_fn = collate_fn, shuffle = False, num_workers = 2, pin_memory = True, persistent_workers = True)
+
+  def test_dataloader(self):
+    return DataLoader(self.test_dataset, batch_size = self.batch_size,
                     collate_fn = collate_fn, shuffle = False, num_workers = 2, pin_memory = True, persistent_workers = True)
 
 """## 6. Modeling Part 🏎️
@@ -403,7 +411,7 @@ config = {
     'hidden_state': 768,
     'max_2d_position_embeddings': 1001,
     'classes': 32128,
-    'seq_len': 10
+    'seq_len': max_seq_len
 }
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -412,18 +420,25 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 # datamodule = DataModule(train_ds, val_ds)
 
 from sklearn.metrics import accuracy_score
-def calculate_acc_score(pred, gt):
+
+def unpad(pred, gt):
     
     ## Function ignores the calculation of padding part
     ## Shape (seq_len, seq_len)
-    print("gt: ", tokenizer.decode(gt[0], skip_special_tokens=True))
     # print("gt: ", gt[0])
     # mask = torch.clamp(gt, min = 0, max = 1)
     # print("mask: ", (mask != 0).nonzero().shape)
     last_non_zero_argument = 1#(mask != 0).nonzero()[1][-1] #[1][-1]
     pred = pred[:last_non_zero_argument]
     gt = gt[:last_non_zero_argument]  ## Include all the arguments till the first padding index
+
+    print("label: ", tokenizer.decode(gt, skip_special_tokens=True))
+    print("pred: ", tokenizer.decode(pred, skip_special_tokens=True))
+    return(pred, gt)
+
+def calculate_acc_score(pred, gt):
     
+    (pred, gt) = unpad(pred, gt)
     return accuracy_score(pred, gt)
 
 ## https://stackoverflow.com/questions/69899602/linear-decay-as-learning-rate-scheduler-pytorch
@@ -431,7 +446,7 @@ def polynomial(base_lr, iter, max_iter = 1e5, power = 1):
     return base_lr * ((1 - float(iter) / max_iter) ** power)
 
 class LaTrForVQA(pl.LightningModule):
-  def __init__(self, config, learning_rate = 1e-4, max_steps = 100000//2, pretrained_model=None):
+  def __init__(self, config, learning_rate = 1e-4, max_steps = 100000//2, pretrained_model=None, training=True):
     super(LaTrForVQA, self).__init__()
     
     self.config = config
@@ -440,6 +455,7 @@ class LaTrForVQA(pl.LightningModule):
     self.training_losses = []
     self.validation_losses = []
     self.max_steps = max_steps
+    self.training = training
 
 #   def configure_optimizers(self):
 #     optimizer = torch.optim.AdamW(self.parameters(), lr = self.hparams['learning_rate'])
@@ -499,16 +515,29 @@ class LaTrForVQA(pl.LightningModule):
 
   def validation_step(self, batch, batch_idx):
     logits = self.forward(batch)
-    print("batch: ", len(batch["answer"]))
+    # print("batch size: ", len(batch["answer"]))
+    print("batch: ", batch['img_id'])
+
     loss = nn.CrossEntropyLoss()(logits.reshape(-1, self.config['classes']), batch['answer'].reshape(-1))
     _, preds = torch.max(logits, dim = -1)
 
-    print("preds: ", preds.shape)
-    print(tokenizer.decode(preds[0], skip_special_tokens=True))
+    # print("preds: ", preds.shape)
 
     ## Validation Accuracy
-    val_acc = self.calculate_metrics(preds.cpu(), batch['answer'].cpu())
+    predictions = preds.cpu()
+    labels = batch['answer'].cpu()
+
+    val_acc = self.calculate_metrics(predictions, labels)
     val_acc = torch.tensor(val_acc)
+
+    if not self.training:
+      for i in range(len(predictions)):
+          (pred, gt) = (predictions[i], labels[i])
+          (pred, gt) = unpad(pred, gt)
+          if (pred.item() != gt.item()):
+              f = open("models/wrong_list.txt", "a")
+              f.write(batch['img_id'][i]+"\n")
+              f.close()
 
     ## Logging
     self.log('val_ce_loss', loss, prog_bar = True)
@@ -516,6 +545,8 @@ class LaTrForVQA(pl.LightningModule):
     
     return {'val_loss': loss, 'val_acc': val_acc}
   ## For the fine-tuning stage, Warm-up period is set to 1,000 steps and again is linearly decayed to zero, pg. 12, of the paper
+
+
   ## Refer here: https://github.com/Lightning-AI/lightning/issues/328#issuecomment-550114178
   
   def optimizer_step(self, epoch_nb, batch_nb, optimizer, optimizer_i, opt_closure = None, on_tpu=False,
@@ -563,9 +594,10 @@ from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
 
 def main():
-    datamodule = DataModule(train_ds, val_ds)
-    max_steps = 5000       ## 5K Steps (~2 epochs)
-    latr = LaTrForVQA(config, max_steps= max_steps, learning_rate=1e-5, pretrained_model=fpath_for_pretrained)
+    (train_ds, val_ds, test_ds) = get_data()
+    datamodule = DataModule(train_ds, val_ds, test_ds)
+    max_steps = 6000       ## 5K Steps (~2 epochs)
+    latr = LaTrForVQA(config, max_steps=max_steps, learning_rate=5e-5, pretrained_model=fpath_for_pretrained)
     
     # try:
     #     latr = latr.load_from_checkpoint(url_for_ckpt)

@@ -3,6 +3,7 @@ import torch
 import math
 from torch.nn.utils.rnn import pad_sequence
 
+max_seq_len = 2
 
 def find_pad_idx(boxes):
   for i, j in enumerate(boxes):
@@ -47,7 +48,7 @@ def apply_mask_on_token_bbox(boxes, tokenized_words, only_actual_words = False, 
   return res,boxes, tokenized_words
 
 
-def convert_ans_to_token(answer, label2id, max_seq_length = 10 ):
+def convert_ans_to_token(answer, label2id, max_seq_length = max_seq_len ):
 
   ## Simple Trick to pad a sequence to deired length
   dummy_array = torch.zeros(max_seq_length)
@@ -63,7 +64,7 @@ def convert_ans_to_token(answer, label2id, max_seq_length = 10 ):
   return actual_ans_array
 
 
-def convert_ques_to_token(question, tokenizer, pad_token_id = 0, max_seq_len = 10):
+def convert_ques_to_token(question, tokenizer, pad_token_id = 0, max_seq_len = max_seq_len):
 
   question_array = []
   question = question.split(" ")
