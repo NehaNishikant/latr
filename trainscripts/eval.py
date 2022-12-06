@@ -92,7 +92,8 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # checkpoint_path = "/projects/tir3/users/nnishika/MML/latr/models/lightning_logs/version_575083/epoch=0-step=2477.ckpt"
 # checkpoint_path = "/projects/tir3/users/nnishika/MML/latr/models/lightning_logs/version_576209/epoch=1-step=4954.ckpt"
-checkpoint_path = "/projects/tir3/users/nnishika/MML/latr/models/lightning_logs/version_576365/epoch=1-step=4954.ckpt"
+# checkpoint_path = "/projects/tir3/users/nnishika/MML/latr/models/lightning_logs/version_576365/epoch=1-step=4954.ckpt"
+checkpoint_path = "/projects/tir3/users/nnishika/MML/latr/models/lightning_logs/version_576485/epoch=1-step=4954.ckpt"
 
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
