@@ -1,0 +1,2346 @@
+/var/spool/slurmd/job577233/slurm_script: line 7: ​: command not found
+/var/spool/slurmd/job577233/slurm_script: line 13: ​: command not found
+/home/nnishika/miniconda3/envs/latr/lib/python3.7/site-packages/transformers/models/t5/tokenization_t5.py:174: FutureWarning: This tokenizer was incorrectly instantiated with a model max length of 512 which will be corrected in Transformers v5.
+For now, this behavior is kept to avoid breaking backwards compatibility when padding/encoding with `truncation is True`.
+- Be aware that you SHOULD NOT rely on t5-base automatically truncating your input to 512 when padding/encoding.
+- If you want to encode/pad to sequences longer than 512 you can either instantiate this tokenizer with `model_max_length` or pass `max_length` when encoding/padding.
+- To avoid this warning, please instantiate this tokenizer with `model_max_length` set to your preferred value.
+  FutureWarning,
+/home/nnishika/miniconda3/envs/latr/lib/python3.7/site-packages/transformers/models/t5/tokenization_t5.py:174: FutureWarning: This tokenizer was incorrectly instantiated with a model max length of 512 which will be corrected in Transformers v5.
+For now, this behavior is kept to avoid breaking backwards compatibility when padding/encoding with `truncation is True`.
+- Be aware that you SHOULD NOT rely on t5-base automatically truncating your input to 512 when padding/encoding.
+- If you want to encode/pad to sequences longer than 512 you can either instantiate this tokenizer with `model_max_length` or pass `max_length` when encoding/padding.
+- To avoid this warning, please instantiate this tokenizer with `model_max_length` set to your preferred value.
+  FutureWarning,
+started imports
+finished imports
+{'config': {'t5_model': 't5-base', 'vocab_size': 32128, 'hidden_state': 768, 'max_2d_position_embeddings': 1001, 'classes': 32128, 'seq_len': 2}, 'learning_rate': 5e-05, 'max_steps': 6000, 'pretrained_model': 'models/pretrained.pt', 'training': True, 'warmup': 1000}
+epoch:  1
+dict_keys(['epoch', 'global_step', 'pytorch-lightning_version', 'state_dict', 'loops', 'callbacks', 'optimizer_states', 'lr_schedulers', 'hparams_name', 'hyper_parameters'])
+  0%|          | 0/384 [00:00<?, ?it/s]100%|██████████| 384/384 [00:00<00:00, 5918.02it/s]
+  0%|          | 0/384 [00:00<?, ?it/s]100%|██████████| 384/384 [00:00<00:00, 83365.05it/s]
+  0%|          | 0/384 [00:00<?, ?it/s]100%|██████████| 384/384 [00:00<00:00, 79130.04it/s]
+/home/nnishika/miniconda3/envs/latr/lib/python3.7/site-packages/lightning_lite/plugins/environments/slurm.py:170: PossibleUserWarning: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3 trainscripts/eval.py ...
+  category=PossibleUserWarning,
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/home/nnishika/miniconda3/envs/latr/lib/python3.7/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:229: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 32 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  category=PossibleUserWarning,
+Validation: 0it [00:00, ?it/s]Validation:   0%|          | 0/384 [00:00<?, ?it/s]Validation DataLoader 0:   0%|          | 0/384 [00:00<?, ?it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['859056671179636737']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   0%|          | 1/384 [00:00<04:38,  1.38it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['712810737811505153']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   1%|          | 2/384 [00:00<02:25,  2.63it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['939714200456318981']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   1%|          | 3/384 [00:00<01:40,  3.77it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['821997332346437632']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:   1%|          | 4/384 [00:00<01:19,  4.79it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['736082451424890881']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   1%|▏         | 5/384 [00:00<01:06,  5.68it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['920605091429797889']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:   2%|▏         | 6/384 [00:00<00:57,  6.52it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823616855252336640']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   2%|▏         | 7/384 [00:00<00:51,  7.30it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['698723413162987521']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:   2%|▏         | 8/384 [00:01<00:47,  7.99it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['882067719184674816']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:   2%|▏         | 9/384 [00:01<00:43,  8.59it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['882363765655834624']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   3%|▎         | 10/384 [00:01<00:40,  9.19it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['921278376085803008']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   3%|▎         | 11/384 [00:01<00:38,  9.72it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['717042051074891776']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:   3%|▎         | 12/384 [00:01<00:36, 10.25it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['692846957883076608']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:   3%|▎         | 13/384 [00:01<00:34, 10.76it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['865488370838851585']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   4%|▎         | 14/384 [00:01<00:32, 11.31it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['921594955138781184']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   4%|▍         | 15/384 [00:01<00:31, 11.85it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['706657778140471298']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   4%|▍         | 16/384 [00:01<00:29, 12.32it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['900218985140113409']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   4%|▍         | 17/384 [00:01<00:28, 12.81it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['928872445695553536']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:   5%|▍         | 18/384 [00:01<00:27, 13.16it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['728641891726548992']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:   5%|▍         | 19/384 [00:01<00:26, 13.60it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['887806971314749440']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   5%|▌         | 20/384 [00:01<00:26, 13.70it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['732652452919541762']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   5%|▌         | 21/384 [00:01<00:25, 14.11it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['702578148110680064']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   6%|▌         | 22/384 [00:01<00:25, 14.07it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['725018007563603969']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   6%|▌         | 23/384 [00:01<00:25, 14.17it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['909025478672998400']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   6%|▋         | 24/384 [00:01<00:24, 14.49it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['925000460565655554']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   7%|▋         | 25/384 [00:01<00:24, 14.80it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['722483568413310976']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   7%|▋         | 26/384 [00:01<00:23, 15.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['883663535414300672']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   7%|▋         | 27/384 [00:01<00:23, 15.26it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['726847431854313472']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:   7%|▋         | 28/384 [00:01<00:22, 15.58it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['926854741887541248']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   8%|▊         | 29/384 [00:01<00:22, 15.70it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['725711205957046272']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   8%|▊         | 30/384 [00:01<00:22, 15.96it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['850350213286039553']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   8%|▊         | 31/384 [00:01<00:22, 16.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['873511193905856513']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   8%|▊         | 32/384 [00:01<00:21, 16.18it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['913433776931397633']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   9%|▊         | 33/384 [00:02<00:21, 16.31it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['934631087237681152']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:   9%|▉         | 34/384 [00:02<00:21, 16.46it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['711600744223391744']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:   9%|▉         | 35/384 [00:02<00:21, 16.58it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['896700873983840256']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:   9%|▉         | 36/384 [00:02<00:20, 16.75it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['722656595553951746']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  10%|▉         | 37/384 [00:02<00:20, 16.91it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['715681844763566080']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  10%|▉         | 38/384 [00:02<00:20, 17.01it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['835627007383764992']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  10%|█         | 39/384 [00:02<00:20, 17.14it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820299303973359617']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  10%|█         | 40/384 [00:02<00:19, 17.29it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['827844035083698176']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  11%|█         | 41/384 [00:02<00:19, 17.42it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['885152029563342848']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  11%|█         | 42/384 [00:02<00:19, 17.53it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['886730406078304257']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  11%|█         | 43/384 [00:02<00:19, 17.66it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['931343690701918208']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  11%|█▏        | 44/384 [00:02<00:19, 17.76it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['752250366184620032']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  12%|█▏        | 45/384 [00:02<00:18, 17.89it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['912303921875623936']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  12%|█▏        | 46/384 [00:02<00:18, 17.99it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['711919107965329408']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  12%|█▏        | 47/384 [00:02<00:18, 18.06it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['725801399460745216']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  12%|█▎        | 48/384 [00:02<00:18, 18.15it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['874088779853647872']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  13%|█▎        | 49/384 [00:02<00:18, 18.31it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['936685145469337600']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  13%|█▎        | 50/384 [00:02<00:18, 18.41it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['684667398843047936']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  13%|█▎        | 51/384 [00:02<00:18, 18.45it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['879827272244396033']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  14%|█▎        | 52/384 [00:02<00:17, 18.51it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['729099946247467008']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  14%|█▍        | 53/384 [00:02<00:17, 18.68it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['862485502141779968']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  14%|█▍        | 54/384 [00:02<00:17, 18.84it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['939769831481516032']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  14%|█▍        | 55/384 [00:02<00:17, 18.93it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['691878605782171648']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  15%|█▍        | 56/384 [00:02<00:17, 19.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['886767530328588288']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  15%|█▍        | 57/384 [00:02<00:17, 19.07it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['904098404799827968']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  15%|█▌        | 58/384 [00:03<00:17, 19.13it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['768541128174006276']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  15%|█▌        | 59/384 [00:03<00:16, 19.20it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822846686959693826']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  16%|█▌        | 60/384 [00:03<00:16, 19.21it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['891857837051301890']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  16%|█▌        | 61/384 [00:03<00:16, 19.20it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['851483143555215360']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  16%|█▌        | 62/384 [00:03<00:16, 19.29it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['829713774055682048']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  16%|█▋        | 63/384 [00:03<00:16, 19.37it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['870411295366971393']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  17%|█▋        | 64/384 [00:03<00:16, 19.39it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['688016874370674695']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  17%|█▋        | 65/384 [00:03<00:16, 19.48it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['907192702294511616']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  17%|█▋        | 66/384 [00:03<00:16, 19.53it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['727608077931950080']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  17%|█▋        | 67/384 [00:03<00:16, 19.61it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['693410085620461569']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  18%|█▊        | 68/384 [00:03<00:16, 19.69it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['815985320088899584']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  18%|█▊        | 69/384 [00:03<00:15, 19.74it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['731232246997393409']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  18%|█▊        | 70/384 [00:03<00:15, 19.81it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['695371336038756352']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  18%|█▊        | 71/384 [00:03<00:15, 19.87it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['709330709664677888']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  19%|█▉        | 72/384 [00:03<00:15, 19.90it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['706423872405504000']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  19%|█▉        | 73/384 [00:03<00:15, 19.94it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['883524815612772352']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  19%|█▉        | 74/384 [00:03<00:15, 19.99it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['921247351674687488']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  20%|█▉        | 75/384 [00:03<00:15, 20.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['684922233274380288']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  20%|█▉        | 76/384 [00:03<00:15, 20.08it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['904053997216116736']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  20%|██        | 77/384 [00:03<00:15, 20.14it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['715670001940697088']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  20%|██        | 78/384 [00:03<00:15, 20.20it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['938796305161351168']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  21%|██        | 79/384 [00:03<00:15, 20.26it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818204225423503360']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  21%|██        | 80/384 [00:03<00:14, 20.29it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['817487630258597891']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  21%|██        | 81/384 [00:03<00:14, 20.34it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['829119673719414784']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  21%|██▏       | 82/384 [00:04<00:14, 20.37it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['861778185415008256']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  22%|██▏       | 83/384 [00:04<00:14, 20.38it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['877191575067127809']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  22%|██▏       | 84/384 [00:04<00:14, 20.43it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['867701304780402689']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  22%|██▏       | 85/384 [00:04<00:14, 20.44it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['926433400717824000']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  22%|██▏       | 86/384 [00:04<00:14, 20.50it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['817051619334311936']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  23%|██▎       | 87/384 [00:04<00:14, 20.51it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['895235112354406403']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  23%|██▎       | 88/384 [00:04<00:14, 20.55it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['685908290010742784']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  23%|██▎       | 89/384 [00:04<00:14, 20.58it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['854596523799175168']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  23%|██▎       | 90/384 [00:04<00:14, 20.60it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['831431118016622593']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  24%|██▎       | 91/384 [00:04<00:14, 20.60it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['728938770842669058']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  24%|██▍       | 92/384 [00:04<00:14, 20.60it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823419841088458752']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  24%|██▍       | 93/384 [00:04<00:14, 20.69it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['921779205842657280']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  24%|██▍       | 94/384 [00:04<00:13, 20.77it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['927915605281386496']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  25%|██▍       | 95/384 [00:04<00:13, 20.82it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['683363557321388032']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  25%|██▌       | 96/384 [00:04<00:13, 20.87it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['838258483115913217']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  25%|██▌       | 97/384 [00:04<00:13, 20.95it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['859489389243752449']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  26%|██▌       | 98/384 [00:04<00:13, 21.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['706359669653045249']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  26%|██▌       | 99/384 [00:04<00:13, 21.08it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['700798029595435008']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  26%|██▌       | 100/384 [00:04<00:13, 20.97it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['945778202315763712']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  26%|██▋       | 101/384 [00:04<00:13, 21.03it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['891742847581302785']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  27%|██▋       | 102/384 [00:04<00:13, 20.73it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['861946619478110208']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  27%|██▋       | 103/384 [00:04<00:13, 20.78it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['726501055488471040']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  27%|██▋       | 104/384 [00:05<00:13, 20.74it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['832079046351667200']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  27%|██▋       | 105/384 [00:05<00:13, 20.82it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822255713816715264']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  28%|██▊       | 106/384 [00:05<00:13, 20.62it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['828362636513464321']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  28%|██▊       | 107/384 [00:05<00:13, 20.70it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['847253835810709508']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  28%|██▊       | 108/384 [00:05<00:13, 20.71it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['884120962748342272']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  28%|██▊       | 109/384 [00:05<00:13, 20.73it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['899242438019215361']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  29%|██▊       | 110/384 [00:05<00:13, 20.77it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['801201407164416000']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  29%|██▉       | 111/384 [00:05<00:13, 20.80it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822828196714442753']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  29%|██▉       | 112/384 [00:05<00:13, 20.82it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['905846801646813184']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  29%|██▉       | 113/384 [00:05<00:12, 20.86it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['915868144735969280']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  30%|██▉       | 114/384 [00:05<00:12, 20.90it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['856944063945355264']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  30%|██▉       | 115/384 [00:05<00:12, 20.94it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['696097163537948672']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  30%|███       | 116/384 [00:05<00:12, 20.95it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['841744451240357888']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  30%|███       | 117/384 [00:05<00:12, 21.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['725284784763711488']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  31%|███       | 118/384 [00:05<00:12, 21.01it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['706289587212124160']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  31%|███       | 119/384 [00:05<00:12, 21.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['931605744503476226']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  31%|███▏      | 120/384 [00:05<00:12, 21.08it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['828017788539301888']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  32%|███▏      | 121/384 [00:05<00:12, 21.09it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['839856340755496960']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  32%|███▏      | 122/384 [00:05<00:12, 21.10it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['892038477742837762']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  32%|███▏      | 123/384 [00:05<00:12, 21.14it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['873243814705721345']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  32%|███▏      | 124/384 [00:05<00:12, 21.18it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['920014656361652224']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  33%|███▎      | 125/384 [00:05<00:12, 21.19it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['884596721287933952']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  33%|███▎      | 126/384 [00:05<00:12, 21.21it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823010756836921344']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  33%|███▎      | 127/384 [00:05<00:12, 21.22it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['827709119465394176']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  33%|███▎      | 128/384 [00:06<00:12, 21.23it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['697501485026951168']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  34%|███▎      | 129/384 [00:06<00:12, 21.24it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['879496038687547392']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  34%|███▍      | 130/384 [00:06<00:11, 21.28it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['722462007585284096']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  34%|███▍      | 131/384 [00:06<00:11, 21.30it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['840367947851943936']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  34%|███▍      | 132/384 [00:06<00:11, 21.33it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['725395755855278081']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  35%|███▍      | 133/384 [00:06<00:11, 21.36it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['683295117847969793']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  35%|███▍      | 134/384 [00:06<00:11, 21.38it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['827842431269924865']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  35%|███▌      | 135/384 [00:06<00:11, 21.39it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['843931774103277571']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  35%|███▌      | 136/384 [00:06<00:11, 21.43it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['699189047588167680']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  36%|███▌      | 137/384 [00:06<00:11, 21.45it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['907347217882771461']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  36%|███▌      | 138/384 [00:06<00:11, 21.49it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['801692345905258496']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  36%|███▌      | 139/384 [00:06<00:11, 21.53it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['717888234064322560']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  36%|███▋      | 140/384 [00:06<00:11, 21.55it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['915222422713962496']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  37%|███▋      | 141/384 [00:06<00:11, 21.57it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['867582194713116672']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  37%|███▋      | 142/384 [00:06<00:11, 21.62it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822815885761138692']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  37%|███▋      | 143/384 [00:06<00:11, 21.68it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['934302504057167872']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  38%|███▊      | 144/384 [00:06<00:11, 21.74it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['836354513799901184']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  38%|███▊      | 145/384 [00:06<00:10, 21.75it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['709126873645711360']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  38%|███▊      | 146/384 [00:06<00:10, 21.75it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['703371915344404480']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  38%|███▊      | 147/384 [00:06<00:10, 21.62it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['722111068311535616']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  39%|███▊      | 148/384 [00:06<00:10, 21.68it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['717092433046212608']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  39%|███▉      | 149/384 [00:06<00:10, 21.56it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['715310141998899200']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  39%|███▉      | 150/384 [00:06<00:10, 21.58it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['937441794303938562']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  39%|███▉      | 151/384 [00:07<00:10, 21.51it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['713900686740729856']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  40%|███▉      | 152/384 [00:07<00:10, 21.53it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['889833114674970625']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  40%|███▉      | 153/384 [00:07<00:10, 21.45it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823479162656657408']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  40%|████      | 154/384 [00:07<00:10, 21.47it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['835958380879556608']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  40%|████      | 155/384 [00:07<00:10, 21.48it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['881714256512778240']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  41%|████      | 156/384 [00:07<00:10, 21.51it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['892325153262239749']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  41%|████      | 157/384 [00:07<00:10, 21.51it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818149108569567233']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  41%|████      | 158/384 [00:07<00:10, 21.55it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['710870841664409601']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  41%|████▏     | 159/384 [00:07<00:10, 21.57it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['860251483069140992']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  42%|████▏     | 160/384 [00:07<00:10, 21.57it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['824558024203210752']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  42%|████▏     | 161/384 [00:07<00:10, 21.58it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['937116420110012416']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  42%|████▏     | 162/384 [00:07<00:10, 21.60it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['890507272811622401']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  42%|████▏     | 163/384 [00:07<00:10, 21.60it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['725302803070095360']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  43%|████▎     | 164/384 [00:07<00:10, 21.63it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['937879622255030275']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  43%|████▎     | 165/384 [00:07<00:10, 21.64it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['687275544996634624']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  43%|████▎     | 166/384 [00:07<00:10, 21.66it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['736022497783652352']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  43%|████▎     | 167/384 [00:07<00:10, 21.69it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['834989244007378944']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  44%|████▍     | 168/384 [00:07<00:09, 21.74it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['724226487931510784']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  44%|████▍     | 169/384 [00:07<00:09, 21.79it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['885475990138486785']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  44%|████▍     | 170/384 [00:07<00:09, 21.84it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['939591306392821760']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  45%|████▍     | 171/384 [00:07<00:09, 21.78it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['724007134262902784']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  45%|████▍     | 172/384 [00:07<00:09, 21.82it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['859681198972469249']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  45%|████▌     | 173/384 [00:07<00:09, 21.84it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['722485698327027712']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  45%|████▌     | 174/384 [00:07<00:09, 21.86it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['927745478833426432']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  46%|████▌     | 175/384 [00:07<00:09, 21.88it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['906232404871958528']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  46%|████▌     | 176/384 [00:08<00:09, 21.92it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['726168182814334976']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  46%|████▌     | 177/384 [00:08<00:09, 21.89it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['825879837009010689']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  46%|████▋     | 178/384 [00:08<00:09, 21.93it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['717435878512025600']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  47%|████▋     | 179/384 [00:08<00:09, 21.83it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['708361391304904704']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  47%|████▋     | 180/384 [00:08<00:09, 21.87it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['721679848599633921']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  47%|████▋     | 181/384 [00:08<00:09, 21.81it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['715585106455318530']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  47%|████▋     | 182/384 [00:08<00:09, 21.83it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['693217080062005249']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  48%|████▊     | 183/384 [00:08<00:09, 21.84it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['752431172672626691']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  48%|████▊     | 184/384 [00:08<00:09, 21.88it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['735081946548576256']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  48%|████▊     | 185/384 [00:08<00:09, 21.91it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['898020546503360512']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  48%|████▊     | 186/384 [00:08<00:09, 21.94it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['907358116567814145']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  49%|████▊     | 187/384 [00:08<00:08, 21.98it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['732839122239377408']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  49%|████▉     | 188/384 [00:08<00:08, 21.99it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['885040582665662464']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  49%|████▉     | 189/384 [00:08<00:08, 22.01it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['847280159640002564']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  49%|████▉     | 190/384 [00:08<00:08, 22.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819024412829683712']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  50%|████▉     | 191/384 [00:08<00:08, 22.09it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['690029618150166528']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  50%|█████     | 192/384 [00:08<00:08, 22.12it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818385522649272320']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  50%|█████     | 193/384 [00:08<00:08, 22.15it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['884316738141159425']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  51%|█████     | 194/384 [00:08<00:08, 22.19it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['944706094127083520']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  51%|█████     | 195/384 [00:08<00:08, 22.17it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['689878733424087040']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  51%|█████     | 196/384 [00:08<00:08, 22.16it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['852152823638880256']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  51%|█████▏    | 197/384 [00:08<00:08, 22.18it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['904043446821892098']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  52%|█████▏    | 198/384 [00:08<00:08, 22.22it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['687339121505734656']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  52%|█████▏    | 199/384 [00:08<00:08, 22.25it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['905016084209782784']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  52%|█████▏    | 200/384 [00:08<00:08, 22.29it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['729987628028801024']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  52%|█████▏    | 201/384 [00:09<00:08, 22.33it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['846123180553068544']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  53%|█████▎    | 202/384 [00:09<00:08, 22.32it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['830233270164000768']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  53%|█████▎    | 203/384 [00:09<00:08, 22.35it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['731071760540573702']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  53%|█████▎    | 204/384 [00:09<00:08, 22.35it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['852637986151948289']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  53%|█████▎    | 205/384 [00:09<00:07, 22.39it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['883786830646312960']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  54%|█████▎    | 206/384 [00:09<00:07, 22.29it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['847132915272237058']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  54%|█████▍    | 207/384 [00:09<00:07, 22.29it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['929033123987316736']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  54%|█████▍    | 208/384 [00:09<00:07, 22.26it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819330100915216384']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  54%|█████▍    | 209/384 [00:09<00:07, 22.27it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820048995099770880']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  55%|█████▍    | 210/384 [00:09<00:07, 22.29it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820415787349508096']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  55%|█████▍    | 211/384 [00:09<00:07, 22.33it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820048443313790976']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  55%|█████▌    | 212/384 [00:09<00:07, 22.34it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818237826760318976']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  55%|█████▌    | 213/384 [00:09<00:07, 22.36it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822954188380532736']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  56%|█████▌    | 214/384 [00:09<00:07, 22.37it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822226351268761601']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  56%|█████▌    | 215/384 [00:09<00:07, 22.35it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819690312109015040']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  56%|█████▋    | 216/384 [00:09<00:07, 22.34it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822584826037436420']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  57%|█████▋    | 217/384 [00:09<00:07, 22.34it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822228485422940160']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  57%|█████▋    | 218/384 [00:09<00:07, 22.33it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820052841268187140']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  57%|█████▋    | 219/384 [00:09<00:07, 22.32it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819687123125235713']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  57%|█████▋    | 220/384 [00:09<00:07, 22.31it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818241100318130177']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  58%|█████▊    | 221/384 [00:09<00:07, 22.32it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823310221342900225']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  58%|█████▊    | 222/384 [00:09<00:07, 22.31it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820050414620045312']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  58%|█████▊    | 223/384 [00:09<00:07, 22.31it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819692521697800192']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  58%|█████▊    | 224/384 [00:10<00:07, 22.32it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['817517604868882432']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  59%|█████▊    | 225/384 [00:10<00:07, 22.35it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822590236844818432']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  59%|█████▉    | 226/384 [00:10<00:07, 22.37it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823310708662222850']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  59%|█████▉    | 227/384 [00:10<00:07, 22.39it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819687626798145536']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  59%|█████▉    | 228/384 [00:10<00:06, 22.40it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822586053819240449']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  60%|█████▉    | 229/384 [00:10<00:06, 22.43it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819330641531727873']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  60%|█████▉    | 230/384 [00:10<00:06, 22.45it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820050009727057921']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  60%|██████    | 231/384 [00:10<00:06, 22.47it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819331557777403904']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  60%|██████    | 232/384 [00:10<00:06, 22.49it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822947210451152897']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  61%|██████    | 233/384 [00:10<00:06, 22.52it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['821504158696177664']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  61%|██████    | 234/384 [00:10<00:06, 22.54it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822226883601309696']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  61%|██████    | 235/384 [00:10<00:06, 22.57it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822955217549344768']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  61%|██████▏   | 236/384 [00:10<00:06, 22.59it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820415727978979330']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  62%|██████▏   | 237/384 [00:10<00:06, 22.61it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820052661680668676']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  62%|██████▏   | 238/384 [00:10<00:06, 22.63it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822584628489912321']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  62%|██████▏   | 239/384 [00:10<00:06, 22.66it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823314811522007040']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  62%|██████▎   | 240/384 [00:10<00:06, 22.66it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819685868478795781']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  63%|██████▎   | 241/384 [00:10<00:06, 22.68it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823310097711583233']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  63%|██████▎   | 242/384 [00:10<00:06, 22.71it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823318569161256962']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  63%|██████▎   | 243/384 [00:10<00:06, 22.71it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822225009716396032']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  64%|██████▎   | 244/384 [00:10<00:06, 22.72it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819325018702286848']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  64%|██████▍   | 245/384 [00:10<00:06, 22.74it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823309191003721728']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  64%|██████▍   | 246/384 [00:10<00:06, 22.75it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819694403870720004']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  64%|██████▍   | 247/384 [00:10<00:06, 22.76it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818240532967079937']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  65%|██████▍   | 248/384 [00:10<00:05, 22.78it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822956340528222209']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  65%|██████▍   | 249/384 [00:10<00:05, 22.81it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819686546676838400']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  65%|██████▌   | 250/384 [00:10<00:05, 22.82it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822950049655046145']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  65%|██████▌   | 251/384 [00:10<00:05, 22.84it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822588137503387649']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  66%|██████▌   | 252/384 [00:11<00:05, 22.85it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819689484849713152']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  66%|██████▌   | 253/384 [00:11<00:05, 22.85it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['817518494417829889']
+label:  Yes
+pred:  Yes
+label:  Yes
+pred:  Yes
+Validation DataLoader 0:  66%|██████▌   | 254/384 [00:11<00:05, 22.85it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818606156927135746']
+label:  Yes
+pred:  
+label:  Yes
+pred:  
+Validation DataLoader 0:  66%|██████▋   | 255/384 [00:11<00:05, 22.86it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['827619548610310148']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  67%|██████▋   | 256/384 [00:11<00:05, 22.85it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['919674045276278789']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  67%|██████▋   | 257/384 [00:11<00:05, 22.87it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['879279227492814848']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  67%|██████▋   | 258/384 [00:11<00:05, 22.88it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['861580977235255296']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  67%|██████▋   | 259/384 [00:11<00:05, 22.91it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['940264356675284993']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  68%|██████▊   | 260/384 [00:11<00:05, 22.93it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['879753350799122432']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  68%|██████▊   | 261/384 [00:11<00:05, 22.94it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['855067937601974272']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  68%|██████▊   | 262/384 [00:11<00:05, 22.97it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['921722988059295750']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  68%|██████▊   | 263/384 [00:11<00:05, 22.97it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['852999253349847046']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  69%|██████▉   | 264/384 [00:11<00:05, 22.98it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['834633247443255301']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  69%|██████▉   | 265/384 [00:11<00:05, 22.99it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['685601583879598084']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  69%|██████▉   | 266/384 [00:11<00:05, 22.99it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['925034111747665920']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  70%|██████▉   | 267/384 [00:11<00:05, 22.99it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['736087928628084738']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  70%|██████▉   | 268/384 [00:11<00:05, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['715887235137212416']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  70%|███████   | 269/384 [00:11<00:04, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['816740210822303763']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  70%|███████   | 270/384 [00:11<00:04, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819158842147803136']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  71%|███████   | 271/384 [00:11<00:04, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['913996985266462721']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  71%|███████   | 272/384 [00:11<00:04, 23.03it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['905162339036655616']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  71%|███████   | 273/384 [00:11<00:04, 23.03it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['707741717881950209']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  71%|███████▏  | 274/384 [00:11<00:04, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['696016995611975681']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  72%|███████▏  | 275/384 [00:11<00:04, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['832381483566379009']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  72%|███████▏  | 276/384 [00:11<00:04, 23.03it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['891904969950937088']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  72%|███████▏  | 277/384 [00:12<00:04, 23.03it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['889113302894166016']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  72%|███████▏  | 278/384 [00:12<00:04, 23.04it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['916511907250552833']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  73%|███████▎  | 279/384 [00:12<00:04, 23.06it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['724872310503657472']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  73%|███████▎  | 280/384 [00:12<00:04, 23.08it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['910276317882527744']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  73%|███████▎  | 281/384 [00:12<00:04, 23.10it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['870132473056829440']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  73%|███████▎  | 282/384 [00:12<00:04, 23.12it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['907895635994607616']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  74%|███████▎  | 283/384 [00:12<00:04, 23.13it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['815444754204721152']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  74%|███████▍  | 284/384 [00:12<00:04, 23.15it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['714738569219321860']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  74%|███████▍  | 285/384 [00:12<00:04, 23.17it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819405173680242689']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  74%|███████▍  | 286/384 [00:12<00:04, 23.12it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['726506255683039232']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  75%|███████▍  | 287/384 [00:12<00:04, 23.12it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['826543404897165312']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  75%|███████▌  | 288/384 [00:12<00:04, 23.09it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['816263460656992256']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  75%|███████▌  | 289/384 [00:12<00:04, 23.08it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['875103880387805184']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  76%|███████▌  | 290/384 [00:12<00:04, 23.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['828652835915124736']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  76%|███████▌  | 291/384 [00:12<00:04, 23.04it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['787481394536648704']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  76%|███████▌  | 292/384 [00:12<00:03, 23.06it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['832077099523567617']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  76%|███████▋  | 293/384 [00:12<00:03, 23.08it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['918662682089345025']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  77%|███████▋  | 294/384 [00:12<00:03, 23.10it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['926589171606663169']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  77%|███████▋  | 295/384 [00:12<00:03, 23.12it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['856978263993978881']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  77%|███████▋  | 296/384 [00:12<00:03, 23.08it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['694514029121949696']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  77%|███████▋  | 297/384 [00:12<00:03, 23.10it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['797744788229365760']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  78%|███████▊  | 298/384 [00:12<00:03, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['841528734964310016']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  78%|███████▊  | 299/384 [00:12<00:03, 23.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['911642559033876481']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  78%|███████▊  | 300/384 [00:13<00:03, 22.96it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['832465045921558529']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  78%|███████▊  | 301/384 [00:13<00:03, 22.94it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['851638105492910080']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  79%|███████▊  | 302/384 [00:13<00:03, 22.95it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['715638264795779072']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  79%|███████▉  | 303/384 [00:13<00:03, 22.96it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['847145698965573632']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  79%|███████▉  | 304/384 [00:13<00:03, 22.97it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['733777709655052288']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  79%|███████▉  | 305/384 [00:13<00:03, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['899495544128626688']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  80%|███████▉  | 306/384 [00:13<00:03, 22.95it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['834651156622213120']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  80%|███████▉  | 307/384 [00:13<00:03, 22.95it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['838007434463612929']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  80%|████████  | 308/384 [00:13<00:03, 22.93it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['842768786281418756']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  80%|████████  | 309/384 [00:13<00:03, 22.92it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['730451262777524224']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  81%|████████  | 310/384 [00:13<00:03, 22.91it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['692330929432432640']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  81%|████████  | 311/384 [00:13<00:03, 22.90it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['902686058189611008']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  81%|████████▏ | 312/384 [00:13<00:03, 22.92it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['700019987419959296']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  82%|████████▏ | 313/384 [00:13<00:03, 22.94it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['904812124555296768']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  82%|████████▏ | 314/384 [00:13<00:03, 22.94it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['846593349939290112']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  82%|████████▏ | 315/384 [00:13<00:03, 22.94it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822986535339311105']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  82%|████████▏ | 316/384 [00:13<00:02, 22.95it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['716011035115831296']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  83%|████████▎ | 317/384 [00:13<00:02, 22.98it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['692580725133045760']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  83%|████████▎ | 318/384 [00:13<00:02, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819935492326047745']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  83%|████████▎ | 319/384 [00:13<00:02, 22.99it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['916723908379860992']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  83%|████████▎ | 320/384 [00:13<00:02, 22.98it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['939526417695481856']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  84%|████████▎ | 321/384 [00:13<00:02, 22.98it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['871809735699214340']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  84%|████████▍ | 322/384 [00:14<00:02, 22.98it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['833942362183315456']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  84%|████████▍ | 323/384 [00:14<00:02, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['848178592383160320']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  84%|████████▍ | 324/384 [00:14<00:02, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['908536139446755328']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  85%|████████▍ | 325/384 [00:14<00:02, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819330595146829824']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  85%|████████▍ | 326/384 [00:14<00:02, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818605187451547648']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  85%|████████▌ | 327/384 [00:14<00:02, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818241503067770882']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  85%|████████▌ | 328/384 [00:14<00:02, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820056579235905536']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  86%|████████▌ | 329/384 [00:14<00:02, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820781915917717505']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  86%|████████▌ | 330/384 [00:14<00:02, 23.01it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822588505931059200']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  86%|████████▌ | 331/384 [00:14<00:02, 23.01it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820052902379188224']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  86%|████████▋ | 332/384 [00:14<00:02, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820054162180362241']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  87%|████████▋ | 333/384 [00:14<00:02, 22.99it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820052822859350017']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  87%|████████▋ | 334/384 [00:14<00:02, 22.98it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822226893164384257']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  87%|████████▋ | 335/384 [00:14<00:02, 22.97it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822229394974384129']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  88%|████████▊ | 336/384 [00:14<00:02, 22.96it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819686796141481984']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  88%|████████▊ | 337/384 [00:14<00:02, 22.95it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818605284537077772']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  88%|████████▊ | 338/384 [00:14<00:02, 22.94it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819689929018142720']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  88%|████████▊ | 339/384 [00:14<00:01, 22.93it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820052872423305216']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  89%|████████▊ | 340/384 [00:14<00:01, 22.93it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823315345117249540']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  89%|████████▉ | 341/384 [00:14<00:01, 22.94it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818244581762351104']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  89%|████████▉ | 342/384 [00:14<00:01, 22.96it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820412091081359360']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  89%|████████▉ | 343/384 [00:14<00:01, 22.96it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820410063768555520']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  90%|████████▉ | 344/384 [00:14<00:01, 22.96it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818245875726249985']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  90%|████████▉ | 345/384 [00:15<00:01, 22.99it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819329674861940737']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  90%|█████████ | 346/384 [00:15<00:01, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823311332048896000']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  90%|█████████ | 347/384 [00:15<00:01, 23.01it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822954933515382784']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  91%|█████████ | 348/384 [00:15<00:01, 23.01it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822949510540361728']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  91%|█████████ | 349/384 [00:15<00:01, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819688404833091584']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  91%|█████████ | 350/384 [00:15<00:01, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819330089909415937']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  91%|█████████▏| 351/384 [00:15<00:01, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819693140131069954']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  92%|█████████▏| 352/384 [00:15<00:01, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819327200654663681']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  92%|█████████▏| 353/384 [00:15<00:01, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818237984281661440']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  92%|█████████▏| 354/384 [00:15<00:01, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823313994572333058']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  92%|█████████▏| 355/384 [00:15<00:01, 23.00it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820409909778976768']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  93%|█████████▎| 356/384 [00:15<00:01, 23.01it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819688638766166018']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  93%|█████████▎| 357/384 [00:15<00:01, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['823314457887731712']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  93%|█████████▎| 358/384 [00:15<00:01, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822592749870399492']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  93%|█████████▎| 359/384 [00:15<00:01, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820781722505768961']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  94%|█████████▍| 360/384 [00:15<00:01, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819323276249993216']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  94%|█████████▍| 361/384 [00:15<00:00, 23.02it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['821504287469666305']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  94%|█████████▍| 362/384 [00:15<00:00, 23.03it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819328538465562624']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  95%|█████████▍| 363/384 [00:15<00:00, 23.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820057165536882689']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  95%|█████████▍| 364/384 [00:15<00:00, 23.06it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['816796252159537156']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  95%|█████████▌| 365/384 [00:15<00:00, 23.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820419827454119937']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  95%|█████████▌| 366/384 [00:15<00:00, 23.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['817518326855266304']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  96%|█████████▌| 367/384 [00:15<00:00, 23.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818243628023816192']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  96%|█████████▌| 368/384 [00:15<00:00, 23.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818245174958714880']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  96%|█████████▌| 369/384 [00:16<00:00, 23.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['820057591837560832']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  96%|█████████▋| 370/384 [00:16<00:00, 23.05it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822949133203881984']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  97%|█████████▋| 371/384 [00:16<00:00, 23.06it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822956416713494533']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  97%|█████████▋| 372/384 [00:16<00:00, 23.06it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822948645695844353']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  97%|█████████▋| 373/384 [00:16<00:00, 23.06it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819324985642663936']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  97%|█████████▋| 374/384 [00:16<00:00, 23.06it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818239390099116033']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  98%|█████████▊| 375/384 [00:16<00:00, 23.07it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['818604386742050816']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  98%|█████████▊| 376/384 [00:16<00:00, 23.09it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822953263058321408']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  98%|█████████▊| 377/384 [00:16<00:00, 23.10it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819330118279696384']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  98%|█████████▊| 378/384 [00:16<00:00, 23.11it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['817516483064504321']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0:  99%|█████████▊| 379/384 [00:16<00:00, 23.12it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['819695185554771968']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  99%|█████████▉| 380/384 [00:16<00:00, 23.12it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822591009372704768']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  99%|█████████▉| 381/384 [00:16<00:00, 23.13it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['821505383130800133']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0:  99%|█████████▉| 382/384 [00:16<00:00, 23.14it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822226869365907456']
+label:  
+pred:  Yes
+label:  
+pred:  Yes
+Validation DataLoader 0: 100%|█████████▉| 383/384 [00:16<00:00, 23.16it/s]answer vector:  torch.Size([1, 2, 32128])
+batch:  ['822955272733949952']
+label:  
+pred:  
+label:  
+pred:  
+Validation DataLoader 0: 100%|██████████| 384/384 [00:16<00:00, 23.18it/s]Validation DataLoader 0: 100%|██████████| 384/384 [00:16<00:00, 23.17it/s]/home/nnishika/miniconda3/envs/latr/lib/python3.7/site-packages/pytorch_lightning/utilities/data.py:86: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 1. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  "Trying to infer the `batch_size` from an ambiguous collection. The batch size we"
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     Validate metric           DataLoader 0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+         val_acc                 0.5078125
+    val_acc_epoch_end            0.5078125
+       val_ce_loss          0.9865172505378723
+   val_loss_epoch_end       0.9865173697471619
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────

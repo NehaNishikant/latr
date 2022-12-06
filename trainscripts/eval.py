@@ -7,6 +7,7 @@ from latr_finetuning import TextVQA
 from latr_finetuning import DataModule 
 from latr_finetuning import LaTrForVQA 
 from latr_finetuning import get_data
+from latr_finetuning import path
 
 ## Default Library import
 
@@ -71,7 +72,6 @@ import torch
 from torchvision import transforms
 
 
-
 """## 6. Modeling Part 🏎️
 1. Firstly, we would define the pytorch model with our configurations
 2. Secondly, we would encode it in the PyTorch Lightening module, and boom 💥 our work of defining the model is done
@@ -90,11 +90,12 @@ config = {
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-# checkpoint_path = "/projects/tir3/users/nnishika/MML/latr/models/lightning_logs/version_575083/epoch=0-step=2477.ckpt"
-# checkpoint_path = "/projects/tir3/users/nnishika/MML/latr/models/lightning_logs/version_576209/epoch=1-step=4954.ckpt"
-# checkpoint_path = "/projects/tir3/users/nnishika/MML/latr/models/lightning_logs/version_576365/epoch=1-step=4954.ckpt"
-# checkpoint_path = "/projects/tir3/users/nnishika/MML/latr/models/lightning_logs/version_576485/epoch=1-step=4954.ckpt"
-checkpoint_path = "/projects/tir3/users/nnishika/MML/latr/models/lightning_logs/version_576605/epoch=1-step=4954-v1.ckpt"
+path += "latr/models/lightning_logs/"
+# checkpoint_path = path+"version_575083/epoch=0-step=2477.ckpt"
+# checkpoint_path = path+"version_576209/epoch=1-step=4954.ckpt"
+# checkpoint_path = path+"version_576365/epoch=1-step=4954.ckpt"
+# checkpoint_path = path+"version_576485/epoch=1-step=4954.ckpt"
+checkpoint_path = path+"version_576605/epoch=1-step=4954-v1.ckpt"
 
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
@@ -109,56 +110,20 @@ def main():
     model = LaTrForVQA(config, training=False)
     model.load_state_dict(checkpoint["state_dict"])
 
-    (train_ds, val_ds, test_ds) = get_data()
+    kwargs = { #only val matters
+            'base_path': 'msdBertWrong/',
+            'train_fname': 'data.json',
+            'val_fname': 'data.json',
+            'test_fname': 'data.json',
+            'train_ocr_fname': 'ocr.json',
+            'val_ocr_fname': 'ocr.json',
+            'test_ocr_fname': 'ocr.json'
+            }
+    (train_ds, val_ds, test_ds) = get_data(**kwargs)
 
     datamodule = DataModule(train_ds, val_ds, test_ds)
     trainer = pl.Trainer(logger=False, devices=1, accelerator="gpu")
     metrics = trainer.validate(model=model, dataloaders=datamodule)
-    # print("metrics: ", metrics)
-
-    """
-    f = open("/projects/tir3/users/nnishika/MML/latr/models/val_metrics.json", "w")
-    json.dump(metrics, f, indent=4)
-    f.close()
-    """
-
-    """
-    max_steps = 50000       ## 60K Steps
-    latr = LaTrForVQA(config, max_steps= max_steps, pretrained_model=fpath_for_pretrained)
-     
-    # try:
-    #     latr = latr.load_from_checkpoint(url_for_ckpt)
-    #     print("Checkpoint loaded correctly")
-    # except:
-    #     print("Could not load checkpoint")
-    #     return 
-    
-    checkpoint_callback = ModelCheckpoint(
-        dirpath="./models", monitor="val_ce_loss", mode="min"
-    )
-    
-    # wandb.init(config=config, project="VQA with LaTr")
-    # wandb_logger = WandbLogger(project="VQA with LaTr", log_model = True, entity="iakarshu")
-    
-    ## https://www.tutorialexample.com/implement-reproducibility-in-pytorch-lightning-pytorch-lightning-tutorial/
-    pl.seed_everything(42, workers=True)
-    
-    trainer = pl.Trainer(
-        max_steps = max_steps,
-        devices=8,
-        accelerator="gpu",
-        # default_root_dir="logs",
-#        gpus=(1 if torch.cuda.is_available() else 0),
-#         accelerator="tpu",
-#         devices=8,
-        #logger=wandb_logger,
-        callbacks=[checkpoint_callback],
-        deterministic=True,
-        default_root_dir="models/"
-    )
-    
-    trainer.fit(latr, datamodule)
-    """
 
 if __name__ == "__main__":
     main()

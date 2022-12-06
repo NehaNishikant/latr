@@ -4,21 +4,13 @@ from PIL import Image
 import json
 import argparse
 
+from path import path
+path += "data-of-multimodal-sarcasm-detection/"
 
-def make_dataset(split):
+def get_ocr_info(img_ids):
 
-    path = "/projects/tir3/users/nnishika/MML/data-of-multimodal-sarcasm-detection/"
-
-    textpath = path+"text/"
-    if split == "train":
-        f_in = open(textpath+"train.txt", "r")
-    else:
-        f_in = open(textpath+split+"2.txt", "r")
-    
     data = []
-    for line in f_in.readlines():
-
-        img_id = eval(line)[0]
+    for img_id in img_ids:
 
         imgpath = path+"dataset_image/"+img_id+'.jpg'
         try:
@@ -60,17 +52,35 @@ def make_dataset(split):
             'ocr_info': ocr_info
         })
 
+    return data
+
+
+def make_dataset(split):
+
+    textpath = path+"text/"
+    if split == "train":
+        f_in = open(textpath+"train.txt", "r")
+    else:
+        f_in = open(textpath+split+"2.txt", "r")
+
+    f_in = open(path+"output/wrongList", "r")
+    f_in.close()
+
+    img_ids = [eval(line)[0] for line in f_in.readlines()]
+
     d_out = {
         'dataset_name': 'sarcasm',
         'dataset_type': split,
         'dataset_verion': 1,
-        'data': data
+        'data': get_ocr_info(img_ids)
         }
-    f_out = open("dataset/sarcasm_ocr_"+split+".json", "w")
+    
+    f_out = open("sarcasm-dataset/sarcasm_ocr_"+split+".json", "w")
     json.dump(d_out, f_out, indent=4)
-
+    f_out.close()
 
 if __name__ == '__main__':
+
     parser = argparse.ArgumentParser()
     parser.add_argument('split', type=str, default=None)
     args = parser.parse_args()

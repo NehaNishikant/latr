@@ -1,5 +1,8 @@
 ## Adding the path of docformer to system path
 import sys
+sys.path.append("../latr/")
+from path import path
+
 sys.path.append('src/latr/')
 
 

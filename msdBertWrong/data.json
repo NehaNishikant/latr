@@ -1,0 +1,3463 @@
+{
+    "dataset_name": "msdBertWrong",
+    "dataset_type": "test",
+    "dataset_version": 1,
+    "data": [
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "859056671179636737",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "712810737811505153",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "939714200456318981",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "821997332346437632",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "736082451424890881",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "920605091429797889",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823616855252336640",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "698723413162987521",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "882067719184674816",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "882363765655834624",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "921278376085803008",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "717042051074891776",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "692846957883076608",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "865488370838851585",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "921594955138781184",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "706657778140471298",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "900218985140113409",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "928872445695553536",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "728641891726548992",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "887806971314749440",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "732652452919541762",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "702578148110680064",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "725018007563603969",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "909025478672998400",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "925000460565655554",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "722483568413310976",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "883663535414300672",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "726847431854313472",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "926854741887541248",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "725711205957046272",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "850350213286039553",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "873511193905856513",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "913433776931397633",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "934631087237681152",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "711600744223391744",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "896700873983840256",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "722656595553951746",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "715681844763566080",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "835627007383764992",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820299303973359617",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "827844035083698176",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "885152029563342848",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "886730406078304257",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "931343690701918208",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "752250366184620032",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "912303921875623936",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "711919107965329408",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "725801399460745216",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "874088779853647872",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "936685145469337600",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "684667398843047936",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "879827272244396033",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "729099946247467008",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "862485502141779968",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "939769831481516032",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "691878605782171648",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "886767530328588288",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "904098404799827968",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "768541128174006276",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822846686959693826",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "891857837051301890",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "851483143555215360",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "829713774055682048",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "870411295366971393",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "688016874370674695",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "907192702294511616",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "727608077931950080",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "693410085620461569",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "815985320088899584",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "731232246997393409",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "695371336038756352",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "709330709664677888",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "706423872405504000",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "883524815612772352",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "921247351674687488",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "684922233274380288",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "904053997216116736",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "715670001940697088",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "938796305161351168",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818204225423503360",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "817487630258597891",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "829119673719414784",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "861778185415008256",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "877191575067127809",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "867701304780402689",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "926433400717824000",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "817051619334311936",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "895235112354406403",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "685908290010742784",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "854596523799175168",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "831431118016622593",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "728938770842669058",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823419841088458752",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "921779205842657280",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "927915605281386496",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "683363557321388032",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "838258483115913217",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "859489389243752449",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "706359669653045249",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "700798029595435008",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "945778202315763712",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "891742847581302785",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "861946619478110208",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "726501055488471040",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "832079046351667200",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822255713816715264",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "828362636513464321",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "847253835810709508",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "884120962748342272",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "899242438019215361",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "801201407164416000",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822828196714442753",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "905846801646813184",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "915868144735969280",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "856944063945355264",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "696097163537948672",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "841744451240357888",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "725284784763711488",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "706289587212124160",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "931605744503476226",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "828017788539301888",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "839856340755496960",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "892038477742837762",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "873243814705721345",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "920014656361652224",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "884596721287933952",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823010756836921344",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "827709119465394176",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "697501485026951168",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "879496038687547392",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "722462007585284096",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "840367947851943936",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "725395755855278081",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "683295117847969793",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "827842431269924865",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "843931774103277571",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "699189047588167680",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "907347217882771461",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "801692345905258496",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "717888234064322560",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "915222422713962496",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "867582194713116672",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822815885761138692",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "934302504057167872",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "836354513799901184",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "709126873645711360",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "703371915344404480",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "722111068311535616",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "717092433046212608",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "715310141998899200",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "937441794303938562",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "713900686740729856",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "889833114674970625",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823479162656657408",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "835958380879556608",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "881714256512778240",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "892325153262239749",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818149108569567233",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "710870841664409601",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "860251483069140992",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "824558024203210752",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "937116420110012416",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "890507272811622401",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "725302803070095360",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "937879622255030275",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "687275544996634624",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "736022497783652352",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "834989244007378944",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "724226487931510784",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "885475990138486785",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "939591306392821760",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "724007134262902784",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "859681198972469249",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "722485698327027712",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "927745478833426432",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "906232404871958528",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "726168182814334976",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "825879837009010689",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "717435878512025600",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "708361391304904704",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "721679848599633921",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "715585106455318530",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "693217080062005249",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "752431172672626691",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "735081946548576256",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "898020546503360512",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "907358116567814145",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "732839122239377408",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "885040582665662464",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "847280159640002564",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819024412829683712",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "690029618150166528",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818385522649272320",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "884316738141159425",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "944706094127083520",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "689878733424087040",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "852152823638880256",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "904043446821892098",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "687339121505734656",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "905016084209782784",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "729987628028801024",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "846123180553068544",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "830233270164000768",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "731071760540573702",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "852637986151948289",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "883786830646312960",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "847132915272237058",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "929033123987316736",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819330100915216384",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820048995099770880",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820415787349508096",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820048443313790976",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818237826760318976",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822954188380532736",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822226351268761601",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819690312109015040",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822584826037436420",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822228485422940160",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820052841268187140",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819687123125235713",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818241100318130177",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823310221342900225",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820050414620045312",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819692521697800192",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "817517604868882432",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822590236844818432",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823310708662222850",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819687626798145536",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822586053819240449",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819330641531727873",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820050009727057921",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819331557777403904",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822947210451152897",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "821504158696177664",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822226883601309696",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822955217549344768",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820415727978979330",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820052661680668676",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822584628489912321",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823314811522007040",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819685868478795781",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823310097711583233",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823318569161256962",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822225009716396032",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819325018702286848",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823309191003721728",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819694403870720004",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818240532967079937",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822956340528222209",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819686546676838400",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822950049655046145",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822588137503387649",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819689484849713152",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "817518494417829889",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818606156927135746",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "Yes"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "827619548610310148",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "919674045276278789",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "879279227492814848",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "861580977235255296",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "940264356675284993",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "879753350799122432",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "855067937601974272",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "921722988059295750",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "852999253349847046",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "834633247443255301",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "685601583879598084",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "925034111747665920",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "736087928628084738",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "715887235137212416",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "816740210822303763",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819158842147803136",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "913996985266462721",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "905162339036655616",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "707741717881950209",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "696016995611975681",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "832381483566379009",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "891904969950937088",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "889113302894166016",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "916511907250552833",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "724872310503657472",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "910276317882527744",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "870132473056829440",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "907895635994607616",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "815444754204721152",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "714738569219321860",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819405173680242689",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "726506255683039232",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "826543404897165312",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "816263460656992256",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "875103880387805184",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "828652835915124736",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "787481394536648704",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "832077099523567617",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "918662682089345025",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "926589171606663169",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "856978263993978881",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "694514029121949696",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "797744788229365760",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "841528734964310016",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "911642559033876481",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "832465045921558529",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "851638105492910080",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "715638264795779072",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "847145698965573632",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "733777709655052288",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "899495544128626688",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "834651156622213120",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "838007434463612929",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "842768786281418756",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "730451262777524224",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "692330929432432640",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "902686058189611008",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "700019987419959296",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "904812124555296768",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "846593349939290112",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822986535339311105",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "716011035115831296",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "692580725133045760",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819935492326047745",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "916723908379860992",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "939526417695481856",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "871809735699214340",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "833942362183315456",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "848178592383160320",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "908536139446755328",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819330595146829824",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818605187451547648",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818241503067770882",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820056579235905536",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820781915917717505",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822588505931059200",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820052902379188224",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820054162180362241",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820052822859350017",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822226893164384257",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822229394974384129",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819686796141481984",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818605284537077772",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819689929018142720",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820052872423305216",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823315345117249540",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818244581762351104",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820412091081359360",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820410063768555520",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818245875726249985",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819329674861940737",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823311332048896000",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822954933515382784",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822949510540361728",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819688404833091584",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819330089909415937",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819693140131069954",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819327200654663681",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818237984281661440",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823313994572333058",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820409909778976768",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819688638766166018",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "823314457887731712",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822592749870399492",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820781722505768961",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819323276249993216",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "821504287469666305",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819328538465562624",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820057165536882689",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "816796252159537156",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820419827454119937",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "817518326855266304",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818243628023816192",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818245174958714880",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "820057591837560832",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822949133203881984",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822956416713494533",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822948645695844353",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819324985642663936",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818239390099116033",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "818604386742050816",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822953263058321408",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819330118279696384",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "817516483064504321",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "819695185554771968",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822591009372704768",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "821505383130800133",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822226869365907456",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        },
+        {
+            "question": "Is this sarcastic?",
+            "image_id": "822955272733949952",
+            "image_width": 1024,
+            "image_height": 1024,
+            "answers": [
+                "0"
+            ]
+        }
+    ]
+}

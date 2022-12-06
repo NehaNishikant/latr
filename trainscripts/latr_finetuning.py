@@ -35,6 +35,9 @@ For more understanding of the model and its code implementation, one can visit [
 ## Default Library import
 
 import sys
+sys.path.append("../latr/")
+from path import path
+
 sys.path.append('src/latr')
 
 import os
@@ -205,16 +208,16 @@ class TextVQA(Dataset):
 
     return {'img':img, 'boxes': boxes, 'tokenized_words': tokenized_words, 'question': question, 'answer': answer, 'id': torch.as_tensor(idx), 'img_id':curr_img}
 
-def get_data():
-    base_path = 'sarcasm-dataset/'
-    train_ocr_json_path = os.path.join(base_path, 'sarcasm_ocr_train.json')
-    train_json_path = os.path.join(base_path, 'train.json')
+def get_data(base_path='sarcasm-dataset/', train_fname='train.json', val_fname='val.json', test_fname='test.json', train_ocr_fname='sarcasm_ocr_train.json', val_ocr_fname='sarcasm_ocr_valid.json', test_ocr_fname='sarcasm_ocr_test.json'):
 
-    val_ocr_json_path = os.path.join(base_path, 'sarcasm_ocr_valid.json')
-    val_json_path = os.path.join(base_path, 'valid.json')
+    train_ocr_json_path = os.path.join(base_path, train_ocr_fname)
+    train_json_path = os.path.join(base_path, train_fname)
 
-    test_ocr_json_path = os.path.join(base_path, 'sarcasm_ocr_test.json')
-    test_json_path = os.path.join(base_path, 'test.json')
+    val_ocr_json_path = os.path.join(base_path, val_ocr_fname)
+    val_json_path = os.path.join(base_path, val_fname)
+
+    test_ocr_json_path = os.path.join(base_path, test_ocr_fname)
+    test_json_path = os.path.join(base_path, test_fname)
 
     ## Loading the files
 
@@ -248,7 +251,7 @@ def get_data():
 
     # base_img_path = os.path.join('./', 'train_images')
     # print("base image path: ", base_img_path)
-    base_img_path = "/projects/tir3/users/nnishika/MML/data-of-multimodal-sarcasm-detection/dataset_image"
+    base_img_path = path+"data-of-multimodal-sarcasm-detection/dataset_image"
     train_json_df['path_exists'] = train_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg'))
     train_json_df = train_json_df[train_json_df['path_exists']==True]
 
@@ -554,6 +557,38 @@ class LaTrForVQA(pl.LightningModule):
     
     return {'val_loss': loss, 'val_acc': val_acc}
   ## For the fine-tuning stage, Warm-up period is set to 1,000 steps and again is linearly decayed to zero, pg. 12, of the paper
+
+  def test_step(self, batch, batch_idx):
+    logits = self.forward(batch)
+    # print("batch size: ", len(batch["answer"]))
+    print("batch: ", batch['img_id'])
+
+    loss = nn.CrossEntropyLoss()(logits.reshape(-1, self.config['classes']), batch['answer'].reshape(-1))
+    _, preds = torch.max(logits, dim = -1)
+
+    # print("preds: ", preds.shape)
+
+    ## Test Accuracy
+    predictions = preds.cpu()
+    labels = batch['answer'].cpu()
+
+    test_acc = self.calculate_metrics(predictions, labels)
+    test_acc = torch.tensor(test_acc)
+
+    if not self.training:
+      for i in range(len(predictions)):
+          (pred, gt) = (predictions[i], labels[i])
+          (pred, gt) = unpad(pred, gt)
+          if (pred.item() != gt.item()):
+              f = open("models/test_wrong_list.txt", "a")
+              f.write(batch['img_id'][i]+"\n")
+              f.close()
+
+    ## Logging
+    self.log('test_ce_loss', loss, prog_bar = True)
+    self.log('test_acc', test_acc, prog_bar = True)
+    
+    return {'test_loss': loss, 'test_acc': test_acc}
 
 
   ## Refer here: https://github.com/Lightning-AI/lightning/issues/328#issuecomment-550114178
