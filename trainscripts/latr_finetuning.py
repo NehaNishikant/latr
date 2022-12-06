@@ -446,7 +446,7 @@ def polynomial(base_lr, iter, max_iter = 1e5, power = 1):
     return base_lr * ((1 - float(iter) / max_iter) ** power)
 
 class LaTrForVQA(pl.LightningModule):
-  def __init__(self, config, learning_rate = 1e-4, max_steps = 100000//2, pretrained_model=None, training=True):
+  def __init__(self, config, learning_rate = 1e-4, max_steps = 100000//2, pretrained_model=None, training=True, warmup=1000):
     super(LaTrForVQA, self).__init__()
     
     self.config = config
@@ -456,20 +456,29 @@ class LaTrForVQA(pl.LightningModule):
     self.validation_losses = []
     self.max_steps = max_steps
     self.training = training
-
-#   def configure_optimizers(self):
-#     optimizer = torch.optim.AdamW(self.parameters(), lr = self.hparams['learning_rate'])
-#     warmup_scheduler = warmup.LinearWarmup(optimizer, warmup_period = 1000)  
-#     scheduler = torch.optim.lr_scheduler.LinearLR(optimizer,total_iters  = self.max_steps,  verbose = True)
-#     return [optimizer], [{"scheduler": (lr_scheduler, warmup_scheduler), "interval": "step"}]
-
-#   def lr_scheduler_step(self, scheduler, optimizer_idx, metric):
-#         lr_scheduler, warmup_scheduler = scheduler
-#         with warmup_scheduler.dampening():
-#                 lr_scheduler.step()
+    self.warmup = warmup
 
   def configure_optimizers(self):
+    optimizer = torch.optim.AdamW(self.parameters(), lr = self.hparams['learning_rate'])
+    # warmup_scheduler = warmup.LinearWarmup(optimizer, warmup_period = 1000)  
+    lr_scheduler = torch.optim.lr_scheduler.LinearLR(optimizer,total_iters  = self.max_steps,  verbose = True)
+    # return [optimizer], [{"scheduler": (lr_scheduler, warmup_scheduler), "interval": "step"}]
+    return [optimizer], [{"scheduler": lr_scheduler, "interval": "step"}] #, {"scheduler": warmup_scheduler, "interval": "step"}]
+
+  def lr_scheduler_step(self, scheduler, optimizer_idx, metric):
+      if self.trainer.global_step >= self.warmup:
+          scheduler.step()
+
+      """
+        lr_scheduler, warmup_scheduler = scheduler
+        with warmup_scheduler.dampening():
+                lr_scheduler.step()
+      """
+
+  """
+  def configure_optimizers(self):
     return torch.optim.AdamW(self.parameters(), lr = self.hparams['learning_rate'])
+  """
 
 
   def forward(self, batch_dict):
