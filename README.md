@@ -1,5 +1,22 @@
 # LaTr - PyTorch
 
+to run any of our scripts:
+- you must clone this repo
+- you must clone NehaNishikant/data-of-multimodal-sarcasm
+- you must clone asam01/Saracsm-MsdBERT
+
+all in the same parent directory.
+
+Then change latr/path.py to your path to that parent directory.
+
+Then you can run. Avoid commands/ since that is specific to our file structure.
+You can, however, look at the bash files there to see what scripts we run.
+
+
+
+-------
+from pre-fork
+
 ![latr architecture](images/latr-architecture.jpg)
 
 Implementation of [LaTr: Layout-aware transformer for scene-text VQA](https://arxiv.org/abs/2112.12494),a novel multimodal architecture for Scene Text Visual Question Answering (STVQA).
