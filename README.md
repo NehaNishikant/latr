@@ -14,6 +14,15 @@ Then you can run. Avoid commands/ since that is specific to our file structure.
 You can, however, look at the bash files there to see what scripts we run.
 
 
+To get sarcasm-dataset/, run the commands in make\_ocr\_dataset\_commands and convert\_to\_json.py 
+
+- run trainscripts/LaTr\_PreTraining.py
+- run traincommands/latr\_finetuning.py
+- you can run traincommands/eval.py to get results on a checkpoint model. Change the checkpoint path in the script
+
+You can make\_msdBERT\_wrong.py to make \_msdBERTWrong 
+
+
 
 -------
 from pre-fork
