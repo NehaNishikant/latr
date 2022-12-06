@@ -4,6 +4,7 @@ to run any of our scripts:
 - you must clone this repo
 - you must clone NehaNishikant/data-of-multimodal-sarcasm
 - you must clone asam01/Saracsm-MsdBERT
+and follow their corresponding directions.
 
 all in the same parent directory.
 
