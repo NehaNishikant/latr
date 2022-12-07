@@ -46,6 +46,7 @@ import numpy as np
 from tqdm.auto import tqdm
 import pandas as pd
 import json
+import argparse
 
 ## For the purpose of displaying the progress of map function
 tqdm.pandas()
@@ -102,7 +103,7 @@ import torch
 from torchvision import transforms
 
 class TextVQA(Dataset):
-  def __init__(self, base_img_path, json_df, ocr_json_df, tokenizer, transform = None, max_seq_length = max_seq_len, target_size = (500,384), fine_tune = True):
+  def __init__(self, base_img_path, json_df, ocr_json_df, tokenizer, transform = None, max_seq_length = max_seq_len, target_size = (500,384), fine_tune = True, ablation=None):
 
     self.base_img_path = base_img_path
     self.json_df = json_df
@@ -112,6 +113,7 @@ class TextVQA(Dataset):
     self.transform = transform
     self.max_seq_length = max_seq_length
     self.fine_tune = fine_tune
+    self.ablation = ablation
 
   def __len__(self):
     return len(self.json_df)
@@ -119,7 +121,10 @@ class TextVQA(Dataset):
   def __getitem__(self, idx):
 
     curr_img = self.json_df.iloc[idx]['image_id']
+
     ocr_token = self.ocr_json_df[self.ocr_json_df['image_id']==curr_img]['ocr_info'].values.tolist()[0]
+    if self.ablation == "text":
+        ocr_token = []
 
     boxes = []
     words = []
@@ -147,6 +152,8 @@ class TextVQA(Dataset):
       words.append(entry['word'])
 
     img_path = os.path.join(self.base_img_path, curr_img)+'.jpg'  ## Adding .jpg at end of the image, as the grouped key does not have the extension format 
+    if self.ablation == "text":
+        img_path = img_path = os.path.join(self.base_img_path, '0')+'.jpg'
 
     assert os.path.exists(img_path)==True, f'Make sure that the image exists at {img_path}!!'
     ## Extracting the feature
@@ -200,6 +207,8 @@ class TextVQA(Dataset):
 
     ## Getting the Question
     question = current_group['question']   
+    if self.ablation == "image": # keep image, mask out text
+        question = "Is this sarcastic?"
     question = convert_ques_to_token(question = question, tokenizer = self.tokenizer)
 
     ## Getting the Answer
@@ -208,9 +217,12 @@ class TextVQA(Dataset):
 
     return {'img':img, 'boxes': boxes, 'tokenized_words': tokenized_words, 'question': question, 'answer': answer, 'id': torch.as_tensor(idx), 'img_id':curr_img}
 
-def get_data(base_path='sarcasm-dataset/', train_fname='train.json', val_fname='valid.json', test_fname='test.json', train_ocr_fname='sarcasm_ocr_train.json', val_ocr_fname='sarcasm_ocr_valid.json', test_ocr_fname='sarcasm_ocr_test.json'):
+def get_data(base_path='sarcasm-dataset/', train_fname='train.json', val_fname='valid.json', test_fname='test.json', train_ocr_fname='sarcasm_ocr_train.json', val_ocr_fname='sarcasm_ocr_valid.json', test_ocr_fname='sarcasm_ocr_test.json', ablation=None):
 
     train_ocr_json_path = os.path.join(base_path, train_ocr_fname)
+    
+    # print("train ocr json path: ", train_ocr_json_path)
+
     train_json_path = os.path.join(base_path, train_fname)
 
     val_ocr_json_path = os.path.join(base_path, val_ocr_fname)
@@ -287,7 +299,8 @@ def get_data(base_path='sarcasm-dataset/', train_fname='train.json', val_fname='
                        tokenizer = tokenizer,
                        transform = None, 
                        max_seq_length = max_seq_len, 
-                       target_size = target_size
+                       target_size = target_size,
+                       ablation=ablation
                        )
 
 
@@ -297,7 +310,8 @@ def get_data(base_path='sarcasm-dataset/', train_fname='train.json', val_fname='
                        tokenizer = tokenizer,
                        transform = None, 
                        max_seq_length = max_seq_len, 
-                       target_size = target_size
+                       target_size = target_size,
+                       ablation=ablation
                        )
 
     test_ds = TextVQA(base_img_path = base_img_path,
@@ -306,7 +320,8 @@ def get_data(base_path='sarcasm-dataset/', train_fname='train.json', val_fname='
                        tokenizer = tokenizer,
                        transform = None, 
                        max_seq_length = max_seq_len, 
-                       target_size = target_size
+                       target_size = target_size,
+                       ablation=ablation
                        )
 
     """
@@ -422,7 +437,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 # finetuned_latr = LaTr_for_finetuning(config).to(device)
 # datamodule = DataModule(train_ds, val_ds)
 
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, f1_score
 
 def unpad(pred, gt):
     
@@ -435,21 +450,26 @@ def unpad(pred, gt):
     pred = pred[:last_non_zero_argument]
     gt = gt[:last_non_zero_argument]  ## Include all the arguments till the first padding index
 
+    print("label: ", gt)
     print("label: ", tokenizer.decode(gt, skip_special_tokens=True))
     print("pred: ", tokenizer.decode(pred, skip_special_tokens=True))
     return(pred, gt)
 
-def calculate_acc_score(pred, gt):
-    
+def calculate_acc_score(pred, gt): 
     (pred, gt) = unpad(pred, gt)
     return accuracy_score(pred, gt)
+
+def calculate_f1_score(pred, gt):
+    return 0 # fix this later 
+    (pred, gt) = unpad(pred, gt)
+    return f1_score(pred, gt, pos_label=2163)
 
 ## https://stackoverflow.com/questions/69899602/linear-decay-as-learning-rate-scheduler-pytorch
 def polynomial(base_lr, iter, max_iter = 1e5, power = 1):
     return base_lr * ((1 - float(iter) / max_iter) ** power)
 
 class LaTrForVQA(pl.LightningModule):
-  def __init__(self, config, learning_rate = 1e-4, max_steps = 100000//2, pretrained_model=None, training=True, warmup=1000):
+  def __init__(self, config, learning_rate = 1e-4, max_steps = 100000//2, pretrained_model=None, training=True, warmup=1000, prefix=""):
     super(LaTrForVQA, self).__init__()
     
     self.config = config
@@ -460,6 +480,14 @@ class LaTrForVQA(pl.LightningModule):
     self.max_steps = max_steps
     self.training = training
     self.warmup = warmup
+
+    self.val_wrongpath = "models/"+prefix+"_wrong_list.txt"
+    self.test_wrongpath = "models/"+prefix+"_test_wrong_list.txt"
+    
+    f = open(self.val_wrongpath, "w")
+    f.close()
+    f = open(self.test_wrongpath, "w")
+    f.close()
 
   def configure_optimizers(self):
     optimizer = torch.optim.AdamW(self.parameters(), lr = self.hparams['learning_rate'])
@@ -501,11 +529,16 @@ class LaTrForVQA(pl.LightningModule):
       ## Calculate the accuracy score between the prediction and ground label for a batch, with considering the pad sequence
       batch_size = len(prediction)
       ac_score = 0
+      f1_score = 0
 
       for (pred, gt) in zip(prediction, labels):
         ac_score+= calculate_acc_score(pred.detach().cpu(), gt.detach().cpu())
+        if not self.training:
+            f1_score+= calculate_f1_score(pred.detach().cpu(), gt.detach().cpu())
+
       ac_score = ac_score/batch_size
-      return ac_score
+      f1_score = f1_score/batch_size
+      return (ac_score, f1_score)
 
   def training_step(self, batch, batch_idx):
     answer_vector = self.forward(batch)
@@ -515,12 +548,14 @@ class LaTrForVQA(pl.LightningModule):
     _, preds = torch.max(answer_vector, dim = -1)
 
     ## Calculating the accuracy score
-    train_acc = self.calculate_metrics(preds, batch['answer'])
+    (train_acc, train_f1) = self.calculate_metrics(preds, batch['answer'])
     train_acc = torch.tensor(train_acc)
+    train_f1 = torch.tensor(train_f1)
 
     ## Logging
     self.log('train_ce_loss', loss,prog_bar = True)
     self.log('train_acc', train_acc, prog_bar = True)
+    self.log('train_f1', train_f1, prog_bar = True)
     self.training_losses.append(loss.item())
 
     return loss
@@ -528,7 +563,7 @@ class LaTrForVQA(pl.LightningModule):
   def validation_step(self, batch, batch_idx):
     logits = self.forward(batch)
     # print("batch size: ", len(batch["answer"]))
-    print("batch: ", batch['img_id'])
+    # print("batch: ", batch['img_id'])
 
     loss = nn.CrossEntropyLoss()(logits.reshape(-1, self.config['classes']), batch['answer'].reshape(-1))
     _, preds = torch.max(logits, dim = -1)
@@ -539,29 +574,31 @@ class LaTrForVQA(pl.LightningModule):
     predictions = preds.cpu()
     labels = batch['answer'].cpu()
 
-    val_acc = self.calculate_metrics(predictions, labels)
+    (val_acc, val_f1) = self.calculate_metrics(predictions, labels)
     val_acc = torch.tensor(val_acc)
+    val_f1 = torch.tensor(val_f1)
 
     if not self.training:
       for i in range(len(predictions)):
           (pred, gt) = (predictions[i], labels[i])
           (pred, gt) = unpad(pred, gt)
           if (pred.item() != gt.item()):
-              f = open("models/wrong_list.txt", "a")
+              f = open(self.val_wrongpath, "a")
               f.write(batch['img_id'][i]+"\n")
               f.close()
 
     ## Logging
     self.log('val_ce_loss', loss, prog_bar = True)
     self.log('val_acc', val_acc, prog_bar = True)
+    self.log('val_f1', val_f1, prog_bar = True)
     
-    return {'val_loss': loss, 'val_acc': val_acc}
+    return {'val_loss': loss, 'val_acc': val_acc, 'val_f1': val_f1}
   ## For the fine-tuning stage, Warm-up period is set to 1,000 steps and again is linearly decayed to zero, pg. 12, of the paper
 
   def test_step(self, batch, batch_idx):
     logits = self.forward(batch)
     # print("batch size: ", len(batch["answer"]))
-    print("batch: ", batch['img_id'])
+    # print("batch: ", batch['img_id'])
 
     loss = nn.CrossEntropyLoss()(logits.reshape(-1, self.config['classes']), batch['answer'].reshape(-1))
     _, preds = torch.max(logits, dim = -1)
@@ -572,7 +609,8 @@ class LaTrForVQA(pl.LightningModule):
     predictions = preds.cpu()
     labels = batch['answer'].cpu()
 
-    test_acc = self.calculate_metrics(predictions, labels)
+    (test_acc, test_f1) = self.calculate_metrics(predictions, labels)
+    test_f1 = torch.tensor(test_f1)
     test_acc = torch.tensor(test_acc)
 
     if not self.training:
@@ -580,15 +618,16 @@ class LaTrForVQA(pl.LightningModule):
           (pred, gt) = (predictions[i], labels[i])
           (pred, gt) = unpad(pred, gt)
           if (pred.item() != gt.item()):
-              f = open("models/test_wrong_list.txt", "a")
+              f = open(self.test_wrongpath, "a")
               f.write(batch['img_id'][i]+"\n")
               f.close()
 
     ## Logging
     self.log('test_ce_loss', loss, prog_bar = True)
+    self.log('test_f1', test_f1, prog_bar = True)
     self.log('test_acc', test_acc, prog_bar = True)
     
-    return {'test_loss': loss, 'test_acc': test_acc}
+    return {'test_loss': loss, 'test_acc': test_acc, 'test_f1': test_f1}
 
 
   ## Refer here: https://github.com/Lightning-AI/lightning/issues/328#issuecomment-550114178
@@ -615,9 +654,11 @@ class LaTrForVQA(pl.LightningModule):
         
         val_loss = torch.stack([x['val_loss'] for x in outputs]).mean()
         val_acc = torch.stack([x['val_acc'] for x in outputs]).mean()
+        val_f1 = torch.stack([x['val_f1'] for x in outputs]).mean()
 
         self.log('val_loss_epoch_end', val_loss, on_epoch=True, sync_dist=True)
         self.log('val_acc_epoch_end', val_acc, on_epoch=True, sync_dist=True)
+        self.log('val_f1_epoch_end', val_f1, on_epoch=True, sync_dist=True)
         
         self.val_prediction = []
         
@@ -638,7 +679,12 @@ from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
 
 def main():
-    (train_ds, val_ds, test_ds) = get_data()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--ablation', type=str, default=None)
+    args = parser.parse_args()
+
+    (train_ds, val_ds, test_ds) = get_data(ablation=args.ablation)
     datamodule = DataModule(train_ds, val_ds, test_ds)
     max_steps = 6000       ## 5K Steps (~2 epochs)
     latr = LaTrForVQA(config, max_steps=max_steps, learning_rate=5e-5, pretrained_model=fpath_for_pretrained)
@@ -662,7 +708,7 @@ def main():
     
     trainer = pl.Trainer(
         max_steps = max_steps,
-        devices=6,
+        devices=8,
         accelerator="gpu",
         # default_root_dir="logs",
 #        gpus=(1 if torch.cuda.is_available() else 0),

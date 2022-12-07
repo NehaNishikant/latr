@@ -3,11 +3,11 @@ print("started imports")
 
 # import classes
 
-from latr_finetuning2 import TextVQA
-from latr_finetuning2 import DataModule 
-from latr_finetuning2 import LaTrForVQA 
-from latr_finetuning2 import get_data
-from latr_finetuning2 import path
+from latr_finetuning import TextVQA
+from latr_finetuning import DataModule 
+from latr_finetuning import LaTrForVQA 
+from latr_finetuning import get_data
+from latr_finetuning import path
 
 ## Default Library import
 
@@ -78,38 +78,43 @@ from torchvision import transforms
 2. Secondly, we would encode it in the PyTorch Lightening module, and boom 💥 our work of defining the model is done
 """
 
-## keys are img, boxes, tokenized_words, answer, question
-
-config = {
-    't5_model': 't5-base',
-    'vocab_size': 32128,
-    'hidden_state': 768,
-    'max_2d_position_embeddings': 1001,
-    'classes': 32128,
-    'seq_len': max_seq_len
-}
-
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-
-path += "latr/models/lightning_logs/"
-# checkpoint_path = path+"version_575083/epoch=0-step=2477.ckpt"
-# checkpoint_path = path+"version_576209/epoch=1-step=4954.ckpt"
-# checkpoint_path = path+"version_576365/epoch=1-step=4954.ckpt"
-# checkpoint_path = path+"version_576485/epoch=1-step=4954.ckpt"
-checkpoint_path = path+"version_576605/epoch=1-step=4954-v1.ckpt"
 
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
 
+path += "latr/models/lightning_logs/"
 def main():
+
+    print(args.model_path)
+    
+    ## keys are img, boxes, tokenized_words, answer, question
+
+    config = {
+        't5_model': 't5-base',
+        'vocab_size': 32128,
+        'hidden_state': 768,
+        'max_2d_position_embeddings': 1001,
+        'classes': 32128,
+        'seq_len': max_seq_len
+    }
+
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+    # checkpoint_path = path+"version_575083/epoch=0-step=2477.ckpt"
+    # checkpoint_path = path+"version_576209/epoch=1-step=4954.ckpt"
+    # checkpoint_path = path+"version_576365/epoch=1-step=4954.ckpt"
+    # checkpoint_path = path+"version_576485/epoch=1-step=4954.ckpt"
+    checkpoint_path = path+args.model_path #"version_576605/epoch=1-step=4954-v1.ckpt"
 
     checkpoint = torch.load(checkpoint_path, map_location=lambda storage, loc: storage)
     print(checkpoint["hyper_parameters"])
     print("epoch: ", checkpoint["epoch"])
     print(checkpoint.keys())
 
-    model = LaTrForVQA(config, training=False)
+    model = LaTrForVQA(config, training=False, prefix=args.model_path[8:14])
     model.load_state_dict(checkpoint["state_dict"])
+
+    print("model loaded")
 
     # this is for evaluating msd bert
     kwargs = { #only val matters
@@ -123,8 +128,12 @@ def main():
             }
     (train_ds, val_ds, test_ds) = get_data(ablation=args.ablation) #**kwargs)
 
+    print("data loaded")
+
     datamodule = DataModule(train_ds, val_ds, test_ds)
     trainer = pl.Trainer(logger=False, devices=1, accelerator="gpu")
+
+    print("trainer initialized")
     
     if args.split == "val":
         metrics = trainer.validate(model=model, dataloaders=datamodule)
@@ -134,6 +143,7 @@ def main():
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
+    parser.add_argument('model_path', type=str, default=None)
     parser.add_argument('--ablation', type=str, default=None)
     parser.add_argument('--split', type=str, default="val")
     args = parser.parse_args()
