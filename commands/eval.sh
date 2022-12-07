@@ -14,4 +14,4 @@ conda activate latr
 export TQDM_DISABLE=1
 # code
 
-python3 trainscripts/eval.py 
+python3 trainscripts/eval.py --ablation='image' --split="test" 

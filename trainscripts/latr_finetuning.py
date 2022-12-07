@@ -208,7 +208,7 @@ class TextVQA(Dataset):
 
     return {'img':img, 'boxes': boxes, 'tokenized_words': tokenized_words, 'question': question, 'answer': answer, 'id': torch.as_tensor(idx), 'img_id':curr_img}
 
-def get_data(base_path='sarcasm-dataset/', train_fname='train.json', val_fname='val.json', test_fname='test.json', train_ocr_fname='sarcasm_ocr_train.json', val_ocr_fname='sarcasm_ocr_valid.json', test_ocr_fname='sarcasm_ocr_test.json'):
+def get_data(base_path='sarcasm-dataset/', train_fname='train.json', val_fname='valid.json', test_fname='test.json', train_ocr_fname='sarcasm_ocr_train.json', val_ocr_fname='sarcasm_ocr_valid.json', test_ocr_fname='sarcasm_ocr_test.json'):
 
     train_ocr_json_path = os.path.join(base_path, train_ocr_fname)
     train_json_path = os.path.join(base_path, train_fname)
@@ -662,7 +662,7 @@ def main():
     
     trainer = pl.Trainer(
         max_steps = max_steps,
-        devices=8,
+        devices=6,
         accelerator="gpu",
         # default_root_dir="logs",
 #        gpus=(1 if torch.cuda.is_available() else 0),
@@ -693,6 +693,7 @@ def main():
 #         break
 
 if __name__ == "__main__":
+
     main()
 
 """## References:

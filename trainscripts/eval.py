@@ -3,11 +3,11 @@ print("started imports")
 
 # import classes
 
-from latr_finetuning import TextVQA
-from latr_finetuning import DataModule 
-from latr_finetuning import LaTrForVQA 
-from latr_finetuning import get_data
-from latr_finetuning import path
+from latr_finetuning2 import TextVQA
+from latr_finetuning2 import DataModule 
+from latr_finetuning2 import LaTrForVQA 
+from latr_finetuning2 import get_data
+from latr_finetuning2 import path
 
 ## Default Library import
 
@@ -19,6 +19,7 @@ import json
 import numpy as np
 from tqdm.auto import tqdm
 import pandas as pd
+import argparse
 
 ## For the purpose of displaying the progress of map function
 tqdm.pandas()
@@ -110,6 +111,7 @@ def main():
     model = LaTrForVQA(config, training=False)
     model.load_state_dict(checkpoint["state_dict"])
 
+    # this is for evaluating msd bert
     kwargs = { #only val matters
             'base_path': 'msdBertWrong/',
             'train_fname': 'data.json',
@@ -119,13 +121,23 @@ def main():
             'val_ocr_fname': 'ocr.json',
             'test_ocr_fname': 'ocr.json'
             }
-    (train_ds, val_ds, test_ds) = get_data(**kwargs)
+    (train_ds, val_ds, test_ds) = get_data(ablation=args.ablation) #**kwargs)
 
     datamodule = DataModule(train_ds, val_ds, test_ds)
     trainer = pl.Trainer(logger=False, devices=1, accelerator="gpu")
-    metrics = trainer.validate(model=model, dataloaders=datamodule)
+    
+    if args.split == "val":
+        metrics = trainer.validate(model=model, dataloaders=datamodule)
+    else:
+        metrics = trainer.test(model=model, dataloaders=datamodule)
 
 if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--ablation', type=str, default=None)
+    parser.add_argument('--split', type=str, default="val")
+    args = parser.parse_args()
+
     main()
 
 """## References:

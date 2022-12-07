@@ -22,6 +22,7 @@ To get sarcasm-dataset/, run the commands in make\_ocr\_dataset\_commands and co
 Doing so will create a model with the metrics in models/lightning\_logs/version\_576605/
 
 - you can run traincommands/eval.py to get results on a checkpoint model. Change the checkpoint path in the script
+It creates a wrongList.txt in models/ which you can move wherever you want
 
 
 

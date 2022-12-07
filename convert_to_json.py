@@ -3,6 +3,7 @@ import json
 
 from path import path
 
+
 def convert_record(line):
 
     line = line.rstrip()[2:-1]
@@ -32,7 +33,7 @@ def convert_record(line):
     answer = 'Yes' if label == '1' else '0'
 
     data = {
-        "question": 'Is this sarcastic?',
+        "question": comment,
         'image_id': image_id,
         'image_width': 1024,
         'image_height': 1024,
