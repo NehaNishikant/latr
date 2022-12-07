@@ -126,7 +126,7 @@ def main():
             'val_ocr_fname': 'ocr.json',
             'test_ocr_fname': 'ocr.json'
             }
-    (train_ds, val_ds, test_ds) = get_data(ablation=args.ablation, **kwargs)
+    (train_ds, val_ds, test_ds) = get_data(ablation=args.ablation) #, **kwargs)
 
     print("data loaded")
 
@@ -138,6 +138,7 @@ def main():
     if args.split == "val":
         metrics = trainer.validate(model=model, dataloaders=datamodule)
     else:
+        print("Test")
         metrics = trainer.test(model=model, dataloaders=datamodule)
 
 if __name__ == "__main__":

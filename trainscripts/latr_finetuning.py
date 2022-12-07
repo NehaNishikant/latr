@@ -230,6 +230,7 @@ def get_data(base_path='sarcasm-dataset/', train_fname='train.json', val_fname='
 
     test_ocr_json_path = os.path.join(base_path, test_ocr_fname)
     test_json_path = os.path.join(base_path, test_fname)
+    print("test fname: ", test_fname)
 
     ## Loading the files
 
