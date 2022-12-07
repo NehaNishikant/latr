@@ -708,7 +708,7 @@ def main():
     
     trainer = pl.Trainer(
         max_steps = max_steps,
-        devices=8,
+        devices=6,
         accelerator="gpu",
         # default_root_dir="logs",
 #        gpus=(1 if torch.cuda.is_available() else 0),
