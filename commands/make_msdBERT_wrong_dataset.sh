@@ -14,4 +14,4 @@ conda activate latr
 export TQDM_DISABLE=1
 # code
 
-python make_ocr_dataset.py
+python make_msdBert_wrong.py
