@@ -13,4 +13,4 @@ def get_some_images(fname):
 
     f.close()
 
-get_some_images("models/lightning_logs/version_576485/wrong_list.txt")
+get_some_images("models/lightning_logs/version_577472/577472_test_wrong_list.txt")
