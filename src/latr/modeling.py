@@ -1,6 +1,7 @@
 import torch.nn as nn
 import torch
 from transformers import T5ForConditionalGeneration, ViTModel
+from path import path
 
 # Defining the pytorch model
 
@@ -87,7 +88,7 @@ class LaTr_for_finetuning(nn.Module):
     self.classification_head = nn.Linear(config['hidden_state'], config['classes'])
     # self.fc = nn.Linear(config['classes'], 2)
 
-  def forward(self, lang_vect, spatial_vect, quest_vect, img_vect):
+  def forward(self, lang_vect, spatial_vect, quest_vect, img_vect, img_ids=None):
 
     
     ## The below block of code calculates the language and spatial featuer
@@ -106,7 +107,9 @@ class LaTr_for_finetuning(nn.Module):
     img_feat = self.vit(img_vect).last_hidden_state
 
     ## Extracting the question vector
-    quest_feat = self.pre_training_model.language_emb(quest_vect)
+    # quest_feat = self.pre_training_model.language_emb(quest_vect)
+    # print("img id: ", img_ids)
+    quest_feat = torch.load(path+"Sarcasm-MsdBERT/text_embeds/"+img_ids[0]+".pt")
 
     ## Concating the three features, and then passing it through the T5 Transformer
     final_feat = torch.cat([img_feat, spatial_lang_feat,quest_feat ], axis = -2)

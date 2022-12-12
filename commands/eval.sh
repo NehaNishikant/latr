@@ -15,12 +15,16 @@ export TQDM_DISABLE=1
 # code
 
 # image ablation
-# python3 trainscripts/eval.py "version_576605/epoch=1-step=4954-v1.ckpt" \
-#     --ablation='image' --split="test" 
+python3 trainscripts/eval.py "version_576605/epoch=1-step=4954-v1.ckpt" \
+    --ablation='image' --split="test" 
 # regular
 # python3 trainscripts/eval.py "version_577472/epoch=0-step=3303.ckpt"
-python3 trainscripts/eval.py "version_577472/epoch=0-step=3303.ckpt" \
-    --split="test" 
+# python3 trainscripts/eval.py "version_577472/epoch=0-step=3303.ckpt" \
+#     --split="test" 
 # text ablation
 # python3 trainscripts/eval.py "version_577491/epoch=0-step=3303.ckpt" \
 #     --ablation='text' --split="test"
+# augmented
+# python3 trainscripts/eval.py "version_577737/epoch=0-step=2161.ckpt"
+# python3 trainscripts/eval.py "version_577662/epoch=0-step=2161.ckpt" \
+#     --split="test" 

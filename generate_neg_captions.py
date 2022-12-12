@@ -57,6 +57,7 @@ def generate():
             caption = model(img_path)
             record["question"] = caption[0]["generated_text"] 
             record["image_id"] = new_image_id
+            record["answers"] = ["No"]
             data_augment.append(record)
 
             ocr_record = copy.deepcopy(ocr_data[id2idx[image_id]])

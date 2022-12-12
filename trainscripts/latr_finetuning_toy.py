@@ -153,7 +153,7 @@ class TextVQA(Dataset):
 
     img_path = os.path.join(self.base_img_path, curr_img)+'.jpg'  ## Adding .jpg at end of the image, as the grouped key does not have the extension format 
     if self.ablation == "text":
-        img_path = img_path = os.path.join(self.base_img_path, '0')+'.jpg'
+        img_path = os.path.join(self.base_img_path, '0')+'.jpg'
 
     assert os.path.exists(img_path)==True, f'Make sure that the image exists at {img_path}!!'
     ## Extracting the feature

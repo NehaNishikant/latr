@@ -12,7 +12,10 @@ def get_ocr_info(img_ids):
     data = []
     for img_id in img_ids:
 
+        img_id = "692580725133045760"
+
         imgpath = path+"dataset_image/"+img_id+'.jpg'
+        print(imgpath)
         try:
             img = Image.open(imgpath)
         except:
@@ -52,6 +55,9 @@ def get_ocr_info(img_ids):
             'ocr_info': ocr_info
         })
 
+        print(ocr_tokens)
+        break
+
     return data
 
 
@@ -64,9 +70,8 @@ def make_dataset(split):
         f_in = open(textpath+split+"2.txt", "r")
 
     f_in = open(path+"output/wrongList", "r")
-    f_in.close()
-
     img_ids = [eval(line)[0] for line in f_in.readlines()]
+    f_in.close()
 
     d_out = {
         'dataset_name': 'sarcasm',
@@ -75,9 +80,11 @@ def make_dataset(split):
         'data': get_ocr_info(img_ids)
         }
     
+    """
     f_out = open("sarcasm-dataset/sarcasm_ocr_"+split+".json", "w")
     json.dump(d_out, f_out, indent=4)
     f_out.close()
+    """
 
 if __name__ == '__main__':
 

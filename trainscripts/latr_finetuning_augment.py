@@ -151,7 +151,10 @@ class TextVQA(Dataset):
       boxes.append(curr_bbox)
       words.append(entry['word'])
 
+
     img_path = os.path.join(self.base_img_path, curr_img)+'.jpg'  ## Adding .jpg at end of the image, as the grouped key does not have the extension format 
+    if curr_img[-1] == 'a':
+        img_path = os.path.join(self.base_img_path, curr_img[:-1])+'.jpg'
     if self.ablation == "text":
         img_path = os.path.join(self.base_img_path, '0')+'.jpg'
 
@@ -265,13 +268,13 @@ def get_data(base_path='sarcasm-dataset/', train_fname='train.json', val_fname='
     # base_img_path = os.path.join('./', 'train_images')
     # print("base image path: ", base_img_path)
     base_img_path = path+"data-of-multimodal-sarcasm-detection/dataset_image"
-    train_json_df['path_exists'] = train_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg'))
+    train_json_df['path_exists'] = train_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg') or os.path.exists(os.path.join(base_img_path, x[:-1])+'.jpg'))
     train_json_df = train_json_df[train_json_df['path_exists']==True]
 
-    val_json_df['path_exists'] = val_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg'))
+    val_json_df['path_exists'] = val_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg') or os.path.exists(os.path.join(base_img_path, x[:-1])+'.jpg'))
     val_json_df = val_json_df[val_json_df['path_exists']==True]
 
-    test_json_df['path_exists'] = test_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg'))
+    test_json_df['path_exists'] = test_json_df['image_id'].progress_apply(lambda x: os.path.exists(os.path.join(base_img_path, x)+'.jpg') or os.path.exists(os.path.join(base_img_path, x[:-1])+'.jpg'))
     test_json_df = test_json_df[test_json_df['path_exists']==True]
 
     ## Dropping the unused columns
@@ -452,7 +455,6 @@ def unpad(pred, gt):
     gt = gt[:last_non_zero_argument]  ## Include all the arguments till the first padding index
 
     print("label: ", gt)
-    print("pred: ", pred)
     print("label: ", tokenizer.decode(gt, skip_special_tokens=True))
     print("pred: ", tokenizer.decode(pred, skip_special_tokens=True))
     return(pred, gt)
@@ -519,12 +521,10 @@ class LaTrForVQA(pl.LightningModule):
     img =     batch_dict['img']
     question = batch_dict['question']
     words =   batch_dict['tokenized_words']
-    img_ids = batch_dict['img_id'] 
     final_answer = self.latr(lang_vect = words, 
                                spatial_vect = boxes, 
                                img_vect = img, 
-                               quest_vect = question,
-                               img_ids = img_ids
+                               quest_vect = question
                                )
     return final_answer
 
@@ -677,7 +677,6 @@ class LaTrForVQA(pl.LightningModule):
 #     self.validation_losses = []  # reset for next epoch
 
 
-fpath_for_pretrained = 'models/pretrained.pt'
 
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
@@ -688,10 +687,13 @@ def main():
     parser.add_argument('--ablation', type=str, default=None)
     args = parser.parse_args()
 
-    (train_ds, val_ds, test_ds) = get_data(ablation=args.ablation)
+    (train_ds, val_ds, test_ds) = get_data(ablation=args.ablation, train_fname="augmented_train.json", train_ocr_fname="augmented_train_ocr.json")
+
     datamodule = DataModule(train_ds, val_ds, test_ds)
-    max_steps = 6000       ## 5K Steps (~2 epochs)
-    latr = LaTrForVQA(config, max_steps=max_steps, learning_rate=5e-5, pretrained_model=fpath_for_pretrained)
+    max_steps = 3000       ## 5K Steps (~2 epochs)
+    latr = LaTrForVQA(config, max_steps=max_steps, learning_rate=1e-5)
+
+    latr.load_state_dict(torch.load("models/finetune.pt"))
     
     # try:
     #     latr = latr.load_from_checkpoint(url_for_ckpt)
